@@ -7,6 +7,8 @@ module.exports = {
     ...withNextra(),
     output: 'export',
     distDir: 'docs',
+    skipTrailingSlashRedirect: true,
+    trailingSlash: true,
     images: {
         unoptimized: true,
     }
