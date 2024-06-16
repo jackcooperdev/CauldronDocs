@@ -5,7 +5,7 @@ const withNextra = require('nextra')({
 
 module.exports = {
     ...withNextra(),
-    output: 'export',
+    output: 'standalone',
     distDir: 'docs',
     // skipTrailingSlashRedirect: true,
     // trailingSlash: true,
