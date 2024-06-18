@@ -5,12 +5,11 @@ export default {
   project: {
     link: "https://github.com/jackcooper04/CauldronEngine",
   },
-  title: "test",
   useNextSeoProps() {
     const {asPath} = useRouter();
     if (asPath !== "/") {
       return {
-        titleTemplate: "%s – SWR",
+        titleTemplate: "%s – Cauldron",
       };
     }
   }
