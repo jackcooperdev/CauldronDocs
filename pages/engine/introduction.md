@@ -23,5 +23,5 @@ npm install @jackcooper04/cauldronengine
 
 Once you have installed the package go [here](/engine/authentication) to get started.
 
-Or go [here](/engine/launcher/introduction) to read into how a launcher actually works
+For information on how a launcher works this blog post by Ryan Cao explains it brilliantly. [Inside a Minecraft Launcher](https://ryanccn.dev/posts/inside-a-minecraft-launcher/)
 
