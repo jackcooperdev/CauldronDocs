@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 export default {
   logo: <span>Cauldron Documentation</span>,
   project: {
-    link: "https://github.com/jackcooper04/CauldronEngine",
+    link: "https://github.com/jackcooper04",
   },
   useNextSeoProps() {
     const {asPath} = useRouter();
