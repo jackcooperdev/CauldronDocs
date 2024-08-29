@@ -1,5 +1,4 @@
 {
     "introduction": "Introduction",
-    "authentication":"Authentication",
-    "launch":"Launching the Game"
+    "controllers" : "Controllers"
   }
