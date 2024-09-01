@@ -2,9 +2,9 @@
 
 This controller allows for a game to be installed or launched onto the target system.
 
-# Functions
+## Functions
 
-## launchGame(version, dry, loader, loaderVersion, authData, sessionID, overrides) <a name="launchGame"></a>
+### launchGame (version, dry, loader, loaderVersion, authData, sessionID, overrides)
 
 This function launches or installs the game based on the value of the dry variable. An explanation of the parameters are below.
 
@@ -55,3 +55,5 @@ const launchGame = await launchGame('1.7.10',false,'vanilla','default',authData,
 const launchGame = await launchGame('1.7.10',false,'forge','default',authData,false,{ "jvm": {"launcher_name": "CauldronMC","ram":"8"}});
 // Returns SessionID
 ```
+
+The function finishes when the boot process starts. It will return the session ID.
