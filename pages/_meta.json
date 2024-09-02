@@ -1,5 +1,5 @@
 {
     "index": "Welcome",
-    "engine":"Cauldron Engine",
-    "authentication":"Cauldron Auth"
+    "engine":"Engine",
+    "authentication":"Authentication"
   }
