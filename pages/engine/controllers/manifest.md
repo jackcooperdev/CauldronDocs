@@ -27,7 +27,7 @@ This function collects all the needed data to launch the selected version it ret
 }
 ```
 
-To see a complete example of the output click [here](http://files.jackcooper.me/exampleManifest.json).
+To see a complete example of the output click [here](http://files.cauldronmc.com/debug/exampleManifest.json).
 
 
 ### checkManifest (fileName, url, isAsset, type)
