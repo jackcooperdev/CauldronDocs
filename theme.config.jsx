@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router'
 import { useConfig } from 'nextra-theme-docs'
 export default {
-  docsRepositoryBase: 'https://github.com/jackcooper04/CauldronDocs/tree/main',
+  docsRepositoryBase: 'https://github.com/jackcooper04/CauldronDocs/tree/development',
   logo: <span>Cauldron Documentation</span>,
   project: {
     link: "https://github.com/jackcooper04",
