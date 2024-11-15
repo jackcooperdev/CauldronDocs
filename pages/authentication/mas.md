@@ -34,7 +34,7 @@ If its a valid token then it will refresh the token and return the following.
 }
 ```
 
-### redeemToken (azureCredentials, token )
+### redeemToken (azureCredentials, token)
 
 It takes the following parameters
 
@@ -68,6 +68,7 @@ It takes the following parameters
 If the access token is invalid it will return "XBLIVEAUTHFAIL".
 
 If the access token is valid it will return the following
+
 ```json
 {
   "IssueInstant": "2020-12-07T19:52:08.4463796Z",
@@ -83,7 +84,6 @@ If the access token is valid it will return the following
 }
 ```
 
-
 ### authorizeMojang (token)
 
 It takes the following parameters
@@ -93,18 +93,80 @@ It takes the following parameters
 If the token is invalid it will return "MOJANGFAIL".
 
 If the access token is valid it will return the following
+
 ```json
-{"toSave":{ "xuid": "SAME_XUID"},
-"toReturn": {
-   "IssueInstant":"2020-12-07T19:52:09.2345095Z",
-   "NotAfter":"2020-12-08T11:52:09.2345095Z",
-   "Token":"token", // this is now refered to as token
-   "DisplayClaims":{
-      "xui":[
-         {
-            "uhs":"userhash" // same as last request
-         }
+{
+  "toSave": {"xuid": "SAME_XUID"},
+  "toReturn": {
+    "IssueInstant": "2020-12-07T19:52:09.2345095Z",
+    "NotAfter": "2020-12-08T11:52:09.2345095Z",
+    "Token": "token", // this is now refered to as token
+    "DisplayClaims": {
+      "xui": [
+        {
+          "uhs": "userhash" // same as last request
+        }
       ]
-   }
-}}
+    }
+  }
+}
+```
+
+### authenticateMinecraft (token, xuid)
+
+It takes the following parameters
+
+- token - Token generated from authorizeMojang.
+- xuid - Generated from authenticateXboxLive.
+
+If the token is invalid it will return "MINECRAFTFAIL".
+
+If the access token is valid it will return the following
+
+```json
+{
+  "toSave": {
+    "user_id": "UUID (Not account uuid)",
+    "access_token": "MINECRAFT_ACCESS_TOKEN"
+  },
+  "toReturn": {
+    "username": "UUID (Not account uuid)", // this is not the uuid of the account
+    "roles": [],
+    "access_token": "MINECRAFT_ACCESS_TOKEN", // jwt, your good old minecraft access token
+    "token_type": "Bearer",
+    "expires_in": 86400
+  }
+}
+```
+
+### verifyMinecraft (access_token)
+
+It takes the following parameters
+
+- access_token - Access token generated from authenticateMinecraft
+
+This verifies that the access token is a valid Minecraft access token.
+
+If the token is invalid it will return false.
+
+If the token is valid it will return true.
+
+### getProfileData (access_token)
+
+It takes the following parameters
+
+- access_token - Access token generated from authenticateMinecraft
+
+If the token is invalid it will return "PROFILEGETERROR".
+
+If the access token is valid it will return the following
+
+```json
+{
+  "toSave": {
+    "username": "MINECRAFT_USERNAME",
+    "uuid": "MINECRAFT_UUID"
+  },
+  "toReturn": {"uuid": "MINECRAFT_UUID", "username": "MINECRAFT_USERNAME"}
+}
 ```
