@@ -1,21 +1,4 @@
-# Authentication
-
-In order to sign in into your Minecraft account you need to authenticate yourself with the Mojang servers. The engine itself does not have authentication in built and requires the following object when launching.
-
-```json
-{
-    "access_token":"Account Access Token",
-    "user_id":"Account User ID",
-    "xui":"Account User Hash",
-    "profile":{
-        "uuid":"Minecraft Account UUID",
-        "username":"Minecraft Account Username",
-    }
-}
-```
-There are two options to get this information
-
-## #1 Creating your own Authenticator
+# Creating you own Authenticator
 
 > For a more detailed guide on this refer to [this](https://wiki.vg/Microsoft_Authentication_Scheme) wiki.vg page.
 
@@ -216,13 +199,3 @@ Response will look like this
   "capes" : [ ]
  }
  ```
-
- From here you have all the data needed to launch the game.
-
-
-## #2 Using Cauldron Authenticator
-
-> **Warning!** 
-Using this option may mean that you have limited flexability and may stop working in the event that that my server goes down. I recommend using this option but to provide your own credentials. As seen [here](#step-one-setting-up-the-azure-application).
-
-Go [here] for information on using this authenticator.
