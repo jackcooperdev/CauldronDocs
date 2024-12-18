@@ -1,6 +1,10 @@
+---
+title: MAS
+description: 'MAS page'
+---
 # MAS (Microsoft Authentication Scheme)
 
-These Functions are used for the authentication flow. They can be used seperatley if needed.
+These Functions are used for the authentication flow. They can be used separate if needed.
 
 ## Functions
 
@@ -14,14 +18,14 @@ It takes the following parameters
 ```json
 {
   "CLIENT_ID": "AZURE_CLIENT_ID",
-  "REDIRECT_URI": "REDIECT_URL",
+  "REDIRECT_URI": "REDIRECT_URL",
   "VERIFY_CODE": "CODE_USED_TO_VERIFY_LOGINS"
 }
 ```
 
-If the refresh token is invalid it will return false.
+If the refresh token is invalid, it will return false.
 
-If its a valid token then it will refresh the token and return the following.
+If its valid token, then it will refresh the token and return the following.
 
 ```json
 {
@@ -38,20 +42,20 @@ If its a valid token then it will refresh the token and return the following.
 
 It takes the following parameters
 
-- token - Temporary code that is output from the oauth flow
+- token: Temporary code that is output from the oauth flow
 - azureCredentials -
 
 ```json
 {
   "CLIENT_ID": "AZURE_CLIENT_ID",
-  "REDIRECT_URI": "REDIECT_URL",
+  "REDIRECT_URI": "REDIRECT_URL",
   "VERIFY_CODE": "CODE_USED_TO_VERIFY_LOGINS"
 }
 ```
 
-If the token is invalid it will return "REDEEMFAIL".
+If the token is invalid, it will return "REDEEM_FAIL."
 
-If its a valid token then it will generate a new refresh token.
+If its valid token, then it will generate a new refresh token.
 
 ```json
 {
@@ -63,21 +67,21 @@ If its a valid token then it will generate a new refresh token.
 
 It takes the following parameters
 
-- access_token - Valid Access Token
+- access_token: Valid Access Token
 
-If the access token is invalid it will return "XBLIVEAUTHFAIL".
+If the access token is invalid, it will return "XBOXLIVE_AUTH_FAIL."
 
-If the access token is valid it will return the following
+If the access token is valid, it will return the following
 
 ```json
 {
   "IssueInstant": "2020-12-07T19:52:08.4463796Z",
   "NotAfter": "2020-12-21T19:52:08.4463796Z",
-  "Token": "token", // This is refered to as token from now on
+  "Token": "token", // This is referred to as token from now on
   "DisplayClaims": {
     "xui": [
       {
-        "uhs": "userhash" // this is refered as xuid
+        "uhs": "userhash" // this is referred as xuid
       }
     ]
   }
@@ -88,11 +92,11 @@ If the access token is valid it will return the following
 
 It takes the following parameters
 
-- token - Token generated from authenticateXboxLive.
+- token: Token generated from authenticateXboxLive.
 
-If the token is invalid it will return "MOJANGFAIL".
+If the token is invalid, it will return "MOJANG_FAIL."
 
-If the access token is valid it will return the following
+If the access token is valid, it will return the following
 
 ```json
 {
@@ -100,7 +104,7 @@ If the access token is valid it will return the following
   "toReturn": {
     "IssueInstant": "2020-12-07T19:52:09.2345095Z",
     "NotAfter": "2020-12-08T11:52:09.2345095Z",
-    "Token": "token", // this is now refered to as token
+    "Token": "token", // this is now referred to as token
     "DisplayClaims": {
       "xui": [
         {
@@ -119,9 +123,9 @@ It takes the following parameters
 - token - Token generated from authorizeMojang.
 - xuid - Generated from authenticateXboxLive.
 
-If the token is invalid it will return "MINECRAFTFAIL".
+If the token is invalid, it will return "MINECRAFT_FAIL."
 
-If the access token is valid it will return the following
+If the access token is valid, it will return the following
 
 ```json
 {
@@ -143,23 +147,23 @@ If the access token is valid it will return the following
 
 It takes the following parameters
 
-- access_token - Access token generated from authenticateMinecraft
+- access_token: Access token generated from authenticateMinecraft
 
 This verifies that the access token is a valid Minecraft access token.
 
-If the token is invalid it will return false.
+If the token is invalid, it will return false.
 
-If the token is valid it will return true.
+If the token is valid, it will return true.
 
 ### getProfileData (access_token)
 
 It takes the following parameters
 
-- access_token - Access token generated from authenticateMinecraft
+- access_token: Access token generated from authenticateMinecraft
 
-If the token is invalid it will return "PROFILEGETERROR".
+If the token is invalid, it will return "PROFILE_GET_ERROR."
 
-If the access token is valid it will return the following
+If the access token is valid, it will return the following
 
 ```json
 {

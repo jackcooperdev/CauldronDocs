@@ -1,12 +1,16 @@
+---
+title: Manifest
+description: 'Manifest Page'
+---
 # Manifest Controller
 
-This controller handles aquiring the various manifests and other relevent data required to launch the game.
+This controller handles acquiring the various manifests and other relevant data required to launch the game.
 
 ## Functions
 
 ### getManifests (version,loader,loaderVersion)
 
-This function collects all the needed data to launch the selected version it returns the following object.
+This function collects all the necessary data to launch the selected version it returns the following object.
 
 ```json
 {
@@ -31,18 +35,19 @@ To see a complete example of the output click [here](http://files.cauldronmc.com
 
 
 ### checkManifest (fileName, url, isAsset, type)
-This function checks if the declared manifest exists on the system and if not it downloads and writes the file to the system.
+This function checks if the declared manifest exists on the system and if not,
+it downloads and writes the file to the system.
 
 > The Variable 'type' can be left blank or declared as 'main' declaring it as main will always update it. (For Example for the main version manifest.)
 
-> isAsset needs to be flagged as true if the manifest is a asset manifest.
+> isAsset needs to be flagged as true if the manifest is an asset manifest.
 
 
 **Response**
 
-If the function succeeds it will return the requested information.
+If the function succeeds, it will return the requested information.
 
-If the client is offline the following error will occur.
+If the client is offline, the following error will occur.
 ```
 This Profile Cannot be launched offline. Please Launch it Online first
 ```

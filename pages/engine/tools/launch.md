@@ -1,3 +1,7 @@
+---
+title: Launch Builder
+description: 'Launch Builder Page'
+---
 # Launch Builder
 
 This tool is in charge of building the launch script
@@ -8,7 +12,7 @@ This tool is in charge of building the launch script
 
 ### logInjector (logFile, sessionID)
 
-This injects the sessionID into the logFile in order to seperate log files for each session.
+This injects the sessionID into the logFile to separate log files for each session.
 
 ### buildJVMRules (manifest, libraryList, versionData, overrides)
 
@@ -16,10 +20,10 @@ This functions builds the Java half of the launch command.
 
 The parameters are:
 
-- manifest - The version specific Manifest (spec in the main manifest)
-- libraryList - List of libraries for this version. (See [here](/engine/controllers/library#getlibraries-librarydata-versiondata-manifestid) for information on how to get that list)
-- versionData - (versionData in main manifest)
-- overrides - Click [here](/engine/controllers/library#getlibraries-librarydata-versiondata-manifestid) for information on overrides.
+- manifest: The version specific Manifest (spec in the main manifest)
+- libraryList: List of libraries for this version. (See [here](/engine/controllers/library#getlibraries-librarydata-versiondata-manifestid) for information on how to get that list)
+- versionData: (versionData in main manifest)
+- overrides: Click [here](/engine/controllers/library#getlibraries-librarydata-versiondata-manifestid) for information on overrides.
 
 ### buildGameRules (manifest, loggedUser, overrides)
 
@@ -27,10 +31,10 @@ This functions builds the Game half of the launch command.
 
 The parameters are:
 
-- manifest - The version specific Manifest (spec in the main manifest)
-- loggedUser is an object that includes all data needed to succesfully authentciate a Minecraft User
+- manifest: The version specific Manifest (spec in the main manifest)
+- loggedUser is an object that includes all data needed to successfully authenticate a Minecraft User
 
-> For Information on how to retreive this data click [here]() to learn more.
+> For Information on how to retrieve this data, click [here]() to learn more.
 > Example of a loggedUser object
 
 ```json
@@ -44,7 +48,7 @@ The parameters are:
   }
 }
 ```
-- overrides - Click [here](/engine/controllers/library#getlibraries-librarydata-versiondata-manifestid) for information on overrides.
+- overrides: Click [here](/engine/controllers/library#getlibraries-librarydata-versiondata-manifestid) for information on overrides.
 
 ### buildFile (manifest, jreVersion, jvmRules, gamesRules)
 
@@ -52,7 +56,7 @@ This function builds the complete launch file and writes it to a file ready for 
 
 The parameters are:
 
-- manifest - The version specific Manifest (spec in the main manifest)
+- manifest: The version specific Manifest (spec in the main manifest)
 - jreVersion (jvmComp in main manifest)
-- jvmRules - The data created from the [buildJVMRules](/engine/tools/launch#buildjvmrules-manifest-librarylist-versiondata-overrides) function
-- gameRules - The data created from the [buildGameRules](/engine/tools/launch#buildgamerules-manifest-loggeduser-overrides) function
+- jvmRules: The data created from the [buildJVMRules](/engine/tools/launch#buildjvmrules-manifest-librarylist-versiondata-overrides) function
+- gameRules: The data created from the [buildGameRules](/engine/tools/launch#buildgamerules-manifest-loggeduser-overrides) function

@@ -1,3 +1,7 @@
+---
+title: Launcher
+description: 'Launcher Page'
+---
 # Launcher Controller
 
 This controller allows for a game to be installed or launched onto the target system.
@@ -6,12 +10,12 @@ This controller allows for a game to be installed or launched onto the target sy
 
 ### launchGame (version, dry, loader, loaderVersion, authData, sessionID, overrides)
 
-This function launches or installs the game based on the value of the dry variable. An explanation of the parameters are below.
+This function launches or installs the game based on the value of the dry variable.
+An explanation of the parameters is below.
 
-**authData** is an object that includes all data needed to succesfully authentciate a Minecraft User
+**authData** is an object that includes all data needed to successfully authenticate a Minecraft User.
 
-> For Information on how to retreive this data click [here]() to learn more.
->
+> For Information on how to retrieve this data, check out the [Cauldron Authentication](/authentication/introduction) plugin.
 > > Example of a AuthData object
 
 ```json
@@ -28,9 +32,9 @@ This function launches or installs the game based on the value of the dry variab
 
 **SessionId** can either be a UUID created using the [createSession](/engine/tools/session#createSession) function or declared as false to be generated.
 
-**Overides** (or flag overides) are changes made to how Minecraft boots. Their are two types of overides game and jvm.
+**Overrides** (or flag overrides) are changes made to how Minecraft boots. There are two types of override game and jvm.
 
-> Example of overides object
+> Example of an override object
 
 ```json
 {
@@ -44,13 +48,13 @@ This function launches or installs the game based on the value of the dry variab
 > For A full list of arguments click [here](https://wiki.vg/Launching_the_game#Arguments)
 
 
-> Example Launching a 1.7.10 vanilla client with no overides
+> Example, Launching a 1.7.10 vanilla client with no overrides
 ```js
 const launchGame = await launchGame('1.7.10',false,'vanilla','default',authData,false,{});
 // Returns SessionID
 ```
 
-> Example Launching a 1.7.10 forge client with overrides
+> Example Launching a 1.7.10-forge client with overrides
 ```js
 const launchGame = await launchGame('1.7.10',false,'forge','default',authData,false,{ "jvm": {"launcher_name": "CauldronMC","ram":"8"}});
 // Returns SessionID

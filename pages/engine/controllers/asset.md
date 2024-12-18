@@ -1,3 +1,7 @@
+---
+title: Assets
+description: 'Assets Page'
+---
 # Asset Controller
 
 This controller handles the downloading and sorting of assets for an installation.
