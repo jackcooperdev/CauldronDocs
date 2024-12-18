@@ -1,3 +1,7 @@
+---
+title: Connection
+description: 'Connection Page'
+---
 # Check Connection
 
 This tools checks to see if the client is connected to the internet

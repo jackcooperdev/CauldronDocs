@@ -1,13 +1,19 @@
+---
+title: Logger
+description: 'Logger Page'
+---
 # Logger
-The Logger creates a universal and clean way of displaying both the applications logs and Minecrafts logs at the same time. It uses the [log4js](https://www.npmjs.com/package/log4js) package to acheive this.
+The Logger creates a universal and clean way
+of displaying both the application logs and Minecraft logs at the same time.
+It uses the [log4js](https://www.npmjs.com/package/log4js) package to achieve this.
 
-> Logs are displayed in the application console as well as in a file under "cauldron_engine_logs" in the root folder. Additionally it is broadcasted on tcp port 25568 on localhost.
+> Logs are displayed in the application console as well as in a file under "cauldron_engine_logs" in the root folder. Additionally, it is broadcast on tcp port 25568 on localhost.
 
 ## Functions
 
 ### cauldronLogger
 
-The main function is cauldronLogger and the following are the different log types.
+The main function is cauldronLogger, and the following are the different log types.
 
 ### .info(message)
 <span style="color:green">[2024-09-02T11:39:59.715] [INFO] Cauldron - </span> This is a Info Message
@@ -27,4 +33,5 @@ The main function is cauldronLogger and the following are the different log type
 
 ### setLoggerSession (id)
 
-In order to allow for the session to be destroyed when Minecraft is closed you need to set the loggerSession. Id refers to the sessionID.
+To allow for the session to be destroyed when Minecraft is closed, you need to set the loggerSession.
+ID refers to the sessionID.

@@ -1,6 +1,10 @@
+---
+title: Session Manager
+description: 'Session Page'
+---
 # Session Manager
 
-This toolset has functions that allow for the creation and managment of game sessions.
+This toolset has functions that allow for the creation and management of game sessions.
 
 ## Functions
 
@@ -32,7 +36,7 @@ This functions returns true or false depending on if there is a game session act
 
 ### getSession (sessionID)
 
-This functions gets the information assigned to the session
+This function gets the information assigned to the session
 
 ### destroySession (sessionID)
 

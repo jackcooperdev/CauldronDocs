@@ -1,3 +1,7 @@
+---
+title: File Tools
+description: 'File Tools Page'
+---
 # File Tools
 
 This tools provides a way of downloading, extracting and verifying files.
@@ -24,4 +28,4 @@ This function takes a file object in the following format.
 }
 ```
 
-It will resolve true if succesfull and it will return the fileObject if it fails.
+It will resolve true if successful, and it will return the fileObject if it fails.

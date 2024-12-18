@@ -1,3 +1,7 @@
+---
+title: Auth
+description: 'Auth Page'
+---
 # Auth Verifier
 
 ## Functions

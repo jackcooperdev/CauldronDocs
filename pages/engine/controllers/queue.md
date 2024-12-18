@@ -1,12 +1,17 @@
+---
+title: Queue
+description: 'Queue Page'
+---
 # Queue Controller
 
-This controller handles the creation of download queues. This controller is used in every instance where a bulk amount of files is required to be downloaded.
+This controller handles the creation of download queues.
+This controller is used in every instance where a bulk number of files are required to be downloaded.
 
 ## Functions
 
 ### verifyInstallation (queue)
 
-This function takes the parameter queue. This is an array of objects and the object should be in the following format.
+This function takes the parameter queue. This is an array of objects, and the object should be in the following format.
 
 ```json
 {
@@ -17,4 +22,5 @@ This function takes the parameter queue. This is an array of objects and the obj
 }
 ```
 
-This function will loop until all files have been downloaded or a item fails a set amount of times. The function will return an array of failed items.
+This function will loop until all files have been downloaded or an item fails a set number of times.
+The function will return an array of failed items.

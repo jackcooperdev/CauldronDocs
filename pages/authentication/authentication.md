@@ -1,19 +1,23 @@
-# Creating you own Authenticator
+---
+title: Creating a Authenticator
+description: 'Authenticator Page'
+---
+# Creating your own Authenticator
 
-> For a more detailed guide on this refer to [this](https://wiki.vg/Microsoft_Authentication_Scheme) wiki.vg page.
+> For a more detailed guide on this, refer to [this](https://wiki.vg/Microsoft_Authentication_Scheme) wiki.vg page.
 
 ### Step One: Setting up the Azure Application
 
-1. First of all you need to create a [Microsoft Azure](https://azure.microsoft.com/en-gb) Account.
-2. Then you need to make a Azure Application. Refer to [this](https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app) guide for help.
-3. Next you need to setup a OAuth 2.0 authorization flow where the user will be presented with a login page where it will end in a specified URL. More info [here](https://learn.microsoft.com/en-us/entra/identity-platform/v2-oauth2-auth-code-flow).
+1. First, you need to create a [Microsoft Azure](https://azure.microsoft.com/en-gb) Account.
+2. Then you need to make an Azure Application. Refer to [this](https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app) guide for help.
+3. Next, you need to set up an OAuth 2.0 authorization flow where the user will be presented with a login page where it will end in a specified URL. More info [here](https://learn.microsoft.com/en-us/entra/identity-platform/v2-oauth2-auth-code-flow).
 > Note: Ensure that you include XboxLive.signin in the scope field else you will run into issues.
 
-4. You now need permission to use api.minecraftservices.com. To do that you can use this [form](https://aka.ms/mce-reviewappid). From personal experience this can take a couple of months if its taking to long you can follow up the form with [this](enforce@minecraft.net) email.
+4. You now need permission to use api.minecraftservices.com. To do that, you can use this [form](https://aka.ms/mce-reviewappid). From personal experience, this can take a couple of months if its taking too long, you can follow up the form with [this](mailto:enforce@minecraft.net) email.
 
 ### Step Two: Getting the Access Token
 
-Now that you have your Microsoft access token we can use that to aquire a Minecraft Access Token
+Now that you have your Microsoft access token, we can use that to acquire a Minecraft Access Token
 
 > **Remember!** You need to have permission api.minecraftservices.com to follow these steps. Doing so without permission will return a 403 error.
 
@@ -72,7 +76,7 @@ POST https://user.auth.xboxlive.com/user/authenticate
  }
  ```
 
-The reponse will look like this
+The response will look like this
 
 ```json
  {
@@ -103,7 +107,7 @@ POST https://api.minecraftservices.com/authentication/login_with_xbox
 Response will be
 ```json
  {
-  "username" : "some uuid", // User ID in auth object
+  "username" : "some uuid", // User ID in an auth object
   "roles" : [ ],
   "access_token" : "minecraft access token", // This is your access token for Minecraft
   "token_type" : "Bearer",
@@ -111,7 +115,7 @@ Response will be
  }
  ```
 
-From here we now need to ensure that the user actually owns Minecraft and Get Profile Information for that account.
+From here, we now need to ensure that the user actually owns Minecraft and Get Profile Information for that account.
 
 4. Checking Game Ownership
 ```
@@ -123,7 +127,7 @@ You need to add the following header:
 Authorization: Bearer {ACCESS TOKEN}
 ```
 
-Response will be this:
+The Response will be this:
 
 ```json
  {
@@ -139,7 +143,7 @@ Response will be this:
  }
  ```
 
- In this response three jwts are returned the first contains the following values:
+ In this response, three jwts are returned the first contains the following values:
 
  ``` json
   {
@@ -154,7 +158,7 @@ Response will be this:
 
  The last contains:
 
- ```json
+```json
   {
   "typ": "JWT",
   "alg": "RS256",
@@ -169,10 +173,10 @@ Response will be this:
     }
   ],
   "signerId": "2535416586892404"
- }.[Signature]
- ```
+ }.["Signature"]
+```
 
- If the user does not own the game the entitlments array will be empty.
+ If the user does not own the game, the entitlement array will be empty.
 
 5. Getting Profile Data
 
@@ -184,7 +188,7 @@ You need to add the following header:
 Authorization: Bearer {ACCESS TOKEN}
 ```
 
-Response will look like this
+The Response will look like this
 ``` json
  {
   "id" : "986dec87b7ec47ff89ff033fdb95c4b5", // Account UUID
