@@ -70,4 +70,4 @@ For information on how a launcher works, this blog post by Ryan Cao explains it
 brilliantly.
 [Inside a Minecraft Launcher](https://ryanccn.dev/posts/inside-a-minecraft-launcher/)
 
-Wiki.vg was a great resource that provided lots of information on how various parts of Minecraft works. It has been merged into Minecraft Wiki and can be viewed [here]([https://minecraft.wiki/w/Microsoft_authentication#Navigation](https://minecraft.wiki/w/Category:Java_Edition_technical))
+Wiki.vg was a great resource that provided lots of information on how various parts of Minecraft works. It has been merged into Minecraft Wiki and can be viewed [here](https://minecraft.wiki/w/Category:Java_Edition_technical)
