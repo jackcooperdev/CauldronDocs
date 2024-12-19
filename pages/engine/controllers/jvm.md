@@ -10,22 +10,22 @@ This controller handles the downloading and sorting of the appropriate JVM versi
 
 ### checkCompat (javaVersion, jvmData)
 
-This function checks if the selected JVM version is compatible with the users operating system. It requires two parameters: 
+Parameters:
++ `javaVersion`: JVM Version Name (jvmComp in [getManifests](/engine/controllers/manifest#getmanifests-versionloaderloaderversion) function)
++ `jvmData`: Array of JVM Versions and OS's (jvmMeta in [getManifests](/engine/controllers/manifest#getmanifests-versionloaderloaderversion) function)
 
-- javaVersion: The selected JVM Version (jvmComp in the main manifest)
-- jvmData: The selected JVM Version Manifest Data (jvmMani in the main manifest)
+
+This function checks if the selected JVM version is compatible with the users operating system. It requires two parameters: 
 
 The function will return true or false depending on compatability.
 
-
 ### checkJVM (javaVersion, jvmData)
+
+Parameters:
++ `javaVersion`: JVM Version Name (jvmComp in [getManifests](/engine/controllers/manifest#getmanifests-versionloaderloaderversion) function)
++ `jvmData`: The selected JVM Version Manifest Data (jvmMani in [getManifests](/engine/controllers/manifest#getmanifests-versionloaderloaderversion) function)
 
 This function verifies / downloads the required JVM version to the user system.
 On completion, it will add the version to jvm_installed.json.
-
-It requires the following parameters:
-
-- javaVersion: The selected JVM Version (jvmComp in the main manifest)
-- jvmData: The selected JVM Version Manifest Data (jvmMani in the main manifest)
 
 It will return true if the installation is successful.
