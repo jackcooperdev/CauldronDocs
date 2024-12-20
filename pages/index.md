@@ -1,7 +1,11 @@
 ---
-title: Welcome
-description: 'Welcome to Cauldron Documentation'
+title: Introducing Cauldron
+date: 2024/12/15
+description: Learn about my project CauldronMC
+tag: minecraft, launcher, nodejs, cauldron
+author: Jack Cooper
 ---
+
 # Welcome to Cauldron
 
 ## What is Cauldron?
@@ -20,7 +24,16 @@ I wanted to create a mod launcher which is straightforward to use (like CurseFor
 but make it easier to share private modpacks with friends
 without having to share modpack files every time a change is made.
 
+This project is not meant to replace any existing projects
+(such as [minecraft-launcher-core-node](https://github.com/Voxelum/minecraft-launcher-core-node) by Voxelum)
+and is more to prove to myself that I can complete a project from start to finish.
+This project will always be free to use when ready for release and will remain open-sourced.
+With that in mind, this project aims
+to create a flexible system where profiles and modpacks can be shared seamlessly through different clients,
+for example, a web-based client or through discord.
+
 ## Projects inside Cauldron
+> Some packages may be unavailable while in development
 
 | Name                                                   | Import                                                                    | Description                                                                                     |
 |--------------------------------------------------------|---------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|
