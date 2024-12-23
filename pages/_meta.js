@@ -1,10 +1,10 @@
 export default {
     index: 'Welcome',
     agent: 'Agent',
-    api_docs: 'API',
     engine: 'Engine',
     authentication: 'Authentication',
     packwizjs: 'packwiz_js',
+    api_docs: 'API',
     contact: {
         title: 'Home',
         type: 'page',

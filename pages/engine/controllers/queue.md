@@ -9,9 +9,21 @@ This controller is used in every instance where a bulk number of files are requi
 
 ## Functions
 
-### verifyInstallation (queue)
+### verifyInstallation (queue, isAssetDownload)
 
-This function takes the parameter queue. This is an array of objects, and the object should be in the following format.
+This function takes the following parameters:
+
++ `queue`: Array with objects in the [following format](#queue-format).
++ `isAssetDownload`: Whether the queue contains assets. This changes how many concurrent downloads occur.
+
+This function will loop until all files have been downloaded or an item fails a set number of times.
+
+The function will return an array of failed items in the [same](#queue-format) format.
+
+
+## Appendix
+
+### Queue Format
 
 ```json
 {
@@ -21,6 +33,3 @@ This function takes the parameter queue. This is an array of objects, and the ob
   "sha1": "SHA1 Checksum (Input NONE to skip verification)"
 }
 ```
-
-This function will loop until all files have been downloaded or an item fails a set number of times.
-The function will return an array of failed items.

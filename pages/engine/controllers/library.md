@@ -12,10 +12,10 @@ This controller handles the downloading and sorting of the required libraries fo
 
 This function verifies / downloads the required libraries to the user system.
 
-It requires the following parameters
+It requires the following parameters:
 
-- libraryData: An array of the libraries included in this installation (found in spec. Libraries in the main manifest).
-- versionData: An object of information about the version (found under versionData in the main manifest)
-- manifestID - Game Version
++ `libraryData`: An array of the libraries included in this installation (found in spec. Libraries in the main manifest).
++ `versionData`: An object of information about the version (found under versionData in the main manifest)
++ `manifestID`: Game Version
 
-On completion, the function will return the array of libraries. (To be used in later functions).
+On completion, the function will return the array of library paths. (To be used in launch).

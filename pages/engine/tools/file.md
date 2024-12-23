@@ -10,22 +10,18 @@ This tools provides a way of downloading, extracting and verifying files.
 
 ### download (url, location, fileName)
 
-This function downloads the declared file. The location must be the full path without the fileName.
+This function downloads the declared file. 
 
-### extract (filePath)
+It takes the following parameters:
 
-This function extracts the declared file.
++ `url`: URL of the object you want to download
++ `location`: Download destination without the file name
++ `fileName`: File Name
+
+It will return `true` / `false` dependent on whether the file downloads successfully.
 
 ### validate (fileObject)
 
-This function takes a file object in the following format.
+This function takes a file object in the [following format](/engine/controllers/queue#queue-format).
 
-```json
-{
-    "destination":"File Destination",
-    "sha1":"File SHA1 (input NONE to skip)",
-    "fileName":"File Name"
-}
-```
-
-It will resolve true if successful, and it will return the fileObject if it fails.
+It will resolve `true` if successful, and it will return the `fileObject` if it fails.
