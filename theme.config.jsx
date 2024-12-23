@@ -29,6 +29,7 @@ export default {
     },
     banner: {
         key: '2.0-release',
+        dismissible:false,
         content: (
             <a >
                 🚧 This project and documentation is under construction. Packages and APIS may not be ready or available. 🚧

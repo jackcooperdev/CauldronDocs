@@ -1,9 +1,6 @@
 ---
-title: Introducing Cauldron
-date: 2024/12/15
-description: Learn about my project CauldronMC
-tag: minecraft, launcher, nodejs, cauldron
-author: Jack Cooper
+title: Cauldron
+description: 'Index page for Cauldron'
 ---
 
 # Welcome to Cauldron
@@ -42,3 +39,4 @@ for example, a web-based client or through discord.
 | [CauldronEngine](/engine/introduction)                 | ```@jackcooper04/cauldronengine/```                                       | Responsible for Downloading and Running Minecraft Instances                                     |
 | [CauldronAuthentication](/authentication/introduction) | ```@jackcooper04/cauldronauthentication/```                               | Responsible for Authenticating Minecraft Users                                                  |
 | [packwiz_js](/packwizjs/introduction)                  | ```@jackcooper04/packwiz_js/```                                           | NodeJS package that assists in creating / converting packwiz modpacks to JSON                   |
+

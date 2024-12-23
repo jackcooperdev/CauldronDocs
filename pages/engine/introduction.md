@@ -50,15 +50,15 @@ Cauldron Engine is split into multiple exports. They are listed below.
 
 ### Tools
 
-| Name                                         | Import                                         | Description                                 |
-|----------------------------------------------|------------------------------------------------|---------------------------------------------|
-| [Logger](/engine/tools/logger)               | ```@jackcooper04/cauldronengine/logger```      | Logging                                     |
-| [Compatability](/engine/tools/compat)        | ```@jackcooper04/cauldronengine/compat```      | Tool to Ensure Cross-Platform Compatability |
-| [File Tools](/engine/tools/file)             | ```@jackcooper04/cauldronengine/fileTools```   | Set of Tools to download / verify files     |
-| [Session Manager](/engine/tools/session)     | ```@jackcooper04/cauldronengine/session```     | Manages Minecraft Sessions                  |
-| [Check Connection](/engine/tools/connection) | ```@jackcooper04/cauldronengine/online```      | Checks if Client is Online                  |
-| [Auth Verifier](/engine/tools/auth)          | ```@jackcooper04/cauldronengine/auth```        | Check Access Token Validity                 |
-| [Launch File Builder](/engine/tools/launch)  | ```@jackcooper04/cauldronengine/launchBuild``` | Builds launch File                          |
+| Name                                            | Import                                         | Description                                 |
+|-------------------------------------------------|------------------------------------------------|---------------------------------------------|
+| [Logger](/engine/tools/logger)                  | ```@jackcooper04/cauldronengine/logger```      | Logging                                     |
+| [Compatability](/engine/tools/compat)           | ```@jackcooper04/cauldronengine/compat```      | Tool to Ensure Cross-Platform Compatability |
+| [File Tools](/engine/tools/file)                | ```@jackcooper04/cauldronengine/fileTools```   | Set of Tools to download / verify files     |
+| [Session Manager](/engine/tools/session)        | ```@jackcooper04/cauldronengine/session```     | Manages Minecraft Sessions                  |
+| [Check Connection](/engine/tools/connection)    | ```@jackcooper04/cauldronengine/online```      | Checks if Client is Online                  |
+| [Launch File Builder](/engine/tools/launch)     | ```@jackcooper04/cauldronengine/launchBuild``` | Builds launch File                          |
+| [File Server Locator](/engine/tools/fileserver) | ```@jackcooper04/cauldronengine/files```       | Grabs Static File Server Information        |
 
 ### Plugins
 
