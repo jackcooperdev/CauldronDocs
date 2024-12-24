@@ -30,12 +30,13 @@ to create a flexible system where profiles and modpacks can be shared seamlessly
 for example, a web-based client or through discord.
 
 ## Projects inside Cauldron
+
 > Some packages may be unavailable while in development
 
 | Name                                                   | Import                                                                    | Description                                                                                     |
 |--------------------------------------------------------|---------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|
 | [CauldronAgent](/agent/introduction)                   | [Latest Releases](https://github.com/jackcooper04/CauldronAgent/releases) | Client that manages profiles and provides an local REST interface for other applications to use |
-| [CauldronAPI](/api_docs/introduction)                  |                                                                           | REST API Responsible for saving profiles                                                        |
+| CauldronAPI                                            | Private                                                                   | REST API Responsible for saving profiles and modpacks.                                          |
 | [CauldronEngine](/engine/introduction)                 | ```@jackcooper04/cauldronengine/```                                       | Responsible for Downloading and Running Minecraft Instances                                     |
 | [CauldronAuthentication](/authentication/introduction) | ```@jackcooper04/cauldronauthentication/```                               | Responsible for Authenticating Minecraft Users                                                  |
 | [packwiz_js](/packwizjs/introduction)                  | ```@jackcooper04/packwiz_js/```                                           | NodeJS package that assists in creating / converting packwiz modpacks to JSON                   |

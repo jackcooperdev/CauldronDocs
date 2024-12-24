@@ -4,7 +4,6 @@ export default {
     engine: 'Engine',
     authentication: 'Authentication',
     packwizjs: 'packwiz_js',
-    api_docs: 'API',
     contact: {
         title: 'Home',
         type: 'page',
@@ -22,11 +21,6 @@ export default {
             agent: {
                 title: 'Cauldron Agent',
                 href: 'https://github.com/jackcooper04/cauldronagent',
-                newWindow: true
-            },
-            api_docs: {
-                title: 'CauldronAPI',
-                href: 'https://github.com/jackcooper04/cauldronapi',
                 newWindow: true
             },
             authentication: {
