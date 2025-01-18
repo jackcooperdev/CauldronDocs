@@ -1,5 +1,8 @@
 # Cauldron Authentication
 
+> This Documentation is correct for version [1.3.1](https://github.com/jackcooper04/CauldronAuthentication/releases/tag/1.3.1) of CauldronAuthentication
+
+
 ## What does this do?
 
 Cauldron Authentication is responsible
