@@ -15,9 +15,9 @@ Parameters:
 + `installOnly`: Whether the game should boot or just install
 + `loader`: Game loader (Defaults to Vanilla)
 + `loaderVersion`: (Non-Vanilla Only) Exact loader version to use (Defaults to latest)
-  + Mark This as undefined to default only really used for debug or exact profiles
-+ `authData`: Authentication Data for the logged-in user. Format [here](#example-auth-data-object)
-+ `sessionID`: can either be a UUID created using the [createSession](/engine/tools/session#createSession) function or declared as false to be generated.
+  + Mark This as undefined to default. This is only really used for debug or existing profiles
++ `authData`: Authentication Data for the logged-in user. Check the format [here](#example-auth-data-object)
++ `sessionID`: can either be a UUID created using the [createSession](/engine/tools/session#createSession) function or declared as undefined to be generated.
 + `overrides`: List of JVM and Game arguments. See [here](#overrides) for information
 
 The function finishes when the boot process starts.

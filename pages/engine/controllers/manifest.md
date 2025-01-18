@@ -61,7 +61,7 @@ If the client is offline and no offline copy is found, the following error will 
 This Profile Cannot be launched offline. Please Launch it Online first
 ```
 
-### getPackwizJVM()
+### getPackwizJVM ()
 
 > This is a function directly used in the [Cauldron Agent](/agent/introduction) Project. This may not be useful to you
 
