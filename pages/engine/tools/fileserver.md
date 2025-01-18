@@ -19,7 +19,7 @@ Each file server is given a JWT token that is hosted on the file server under /v
 > + https://files.cauldronmc.com (Default)
 > + https://files-dev.cauldronmc.com
 > 
-> In the future, there will be ways to add / sign other file servers. 
+> In the future, there will be ways to add / sign other file servers for personal use. 
 
 To change file servers the environment variable `CAULDRON_STATIC` can be changed to one of the two servers above.
 ## Functions
@@ -27,3 +27,4 @@ To change file servers the environment variable `CAULDRON_STATIC` can be changed
 ### grabStaticFileServer()
 
 This will return the file server location. If it fails it will return `FILE_SERVER_INVALID`.
+> Your app should exit on this error as access to a file server is required.
