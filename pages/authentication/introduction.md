@@ -1,6 +1,6 @@
 # Cauldron Authentication
 
-> This Documentation is correct for version [1.3.1](https://github.com/jackcooper04/CauldronAuthentication/releases/tag/1.3.1) of CauldronAuthentication
+> This Documentation is correct for version [1.3.1](https://github.com/jackcooperdev/CauldronAuthentication/releases/tag/1.3.1) of CauldronAuthentication
 
 
 ## What does this do?
@@ -16,7 +16,7 @@ This package provides all the tools needed to acquire a Minecraft Access token f
 To Install the package, run the following command
 
 ```
-npm i @jackcooper04/cauldronauthentication --save
+npm i @jackcooperdev/cauldronauthentication --save
 ```
 
 ## Using Cauldron Authentication
@@ -63,5 +63,5 @@ the function will return an object that can be used to launch a Minecraft Instan
 
 | Name                       | Import                                     | Description                                 |
 |----------------------------|--------------------------------------------|---------------------------------------------|
-| [MAS](/authentication/mas) | `@jackcooper04/cauldronauthentication/mas` | Provides Access to the individual functions |
+| [MAS](/authentication/mas) | `@jackcooperdev/cauldronauthentication/mas` | Provides Access to the individual functions |
 

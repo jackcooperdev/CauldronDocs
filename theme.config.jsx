@@ -36,10 +36,10 @@ export default {
             </a>
         )
     },
-  docsRepositoryBase: 'https://github.com/jackcooper04/CauldronDocs/tree/development',
+  docsRepositoryBase: 'https://github.com/jackcooperdev/CauldronDocs/tree/development',
   logo: <span>Cauldron Documentation</span>,
   project: {
-    link: "https://github.com/jackcooper04",
+    link: "https://github.com/jackcooperdev",
   },
   // ... other theme options
 };
