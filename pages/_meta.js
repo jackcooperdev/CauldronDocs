@@ -15,22 +15,22 @@ export default {
         items: {
             engine: {
                 title: 'Cauldron Engine',
-                href: 'https://github.com/jackcooper04/cauldronengine',
+                href: 'https://github.com/jackcooperdev/cauldronengine',
                 newWindow: true
             },
             agent: {
                 title: 'Cauldron Agent',
-                href: 'https://github.com/jackcooper04/cauldronagent',
+                href: 'https://github.com/jackcooperdev/cauldronagent',
                 newWindow: true
             },
             authentication: {
                 title: 'Cauldron Authentication',
-                href: 'https://github.com/jackcooper04/cauldronauthentication',
+                href: 'https://github.com/jackcooperdev/cauldronauthentication',
                 newWindow: true
             },
             packwizjs: {
                 title: 'packwiz_js',
-                href: 'https://github.com/jackcooper04/packwiz_js',
+                href: 'https://github.com/jackcooperdev/packwiz_js',
                 newWindow: true
             }
         }

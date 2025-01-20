@@ -35,9 +35,9 @@ for example, a web-based client or through discord.
 
 | Name                                                   | Import                                                                    | Description                                                                                     |
 |--------------------------------------------------------|---------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|
-| [CauldronAgent](/agent/introduction)                   | [Latest Releases](https://github.com/jackcooper04/CauldronAgent/releases) | Client that manages profiles and provides an local REST interface for other applications to use |
+| [CauldronAgent](/agent/introduction)                   | [Latest Releases](https://github.com/jackcooperdev/CauldronAgent/releases) | Client that manages profiles and provides an local REST interface for other applications to use |
 | CauldronAPI                                            | Private                                                                   | REST API Responsible for saving profiles and modpacks.                                          |
-| [CauldronEngine](/engine/introduction)                 | ```@jackcooper04/cauldronengine/```                                       | Responsible for Downloading and Running Minecraft Instances                                     |
-| [CauldronAuthentication](/authentication/introduction) | ```@jackcooper04/cauldronauthentication/```                               | Responsible for Authenticating Minecraft Users                                                  |
-| [packwiz_js](/packwizjs)                               | ```@jackcooper04/packwiz_js/```                                           | NodeJS package that assists in creating / converting packwiz modpacks to JSON                   |
+| [CauldronEngine](/engine/introduction)                 | ```@jackcooperdev/cauldronengine/```                                       | Responsible for Downloading and Running Minecraft Instances                                     |
+| [CauldronAuthentication](/authentication/introduction) | ```@jackcooperdev/cauldronauthentication/```                               | Responsible for Authenticating Minecraft Users                                                  |
+| [packwiz_js](/packwizjs)                               | ```@jackcooperdev/packwiz_js/```                                           | NodeJS package that assists in creating / converting packwiz modpacks to JSON                   |
 
