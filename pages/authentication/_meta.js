@@ -1,7 +1,11 @@
 export default {
 
     introduction: "Introduction",
-    authentication:"Creating you own Authenticator",
-    mas:"MAS"
+    mas:"MAS",
+    github_link: {
+        title: 'Creating a Authenticator',
+        href: 'https://blog.jackcooper.me/posts/inside-authenticator/',
+        newWindow:true
+    },
 
 }

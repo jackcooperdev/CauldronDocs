@@ -1,9 +1,11 @@
 export default {
-    logger:"Logger",
+    connection:"Check Connection",
     compat:"Compatability",
     file:"File Tools",
+    fileserver: "File Server Locator",
+    launch:"Launch File Builder",
     session:"Session Manager",
-    connection:"Check Connection",
-    auth:"Auth Verifier",
-    launch:"Launch File Builder"
+    logger:"Logger"
+
+
 }
