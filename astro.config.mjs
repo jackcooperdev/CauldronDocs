@@ -1,26 +1,52 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
+import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
+	site:'https://docs.cauldronmc.com',
 	integrations: [
+		sitemap(),
 		starlight({
-			title: 'My Docs',
+			title: 'Cauldron Documentation',
 			social: {
-				github: 'https://github.com/withastro/starlight',
+				github: 'https://github.com/jackcooperdev',
 			},
 			sidebar: [
 				{
-					label: 'Guides',
+					label: 'Getting Started',
 					items: [
-						// Each item here is one entry in the navigation menu.
-						{ label: 'Example Guide', slug: 'guides/example' },
+						{ label: 'About', slug: 'index' },
 					],
 				},
 				{
-					label: 'Reference',
-					autogenerate: { directory: 'reference' },
+					label: 'Cauldron Agent',
+					items: [
+						{ label: 'Overview', slug: 'agent/introduction' },
+					],
+				},
+				{
+					label: 'Cauldron Engine',
+					items: [
+						{ label: 'Overview', slug: 'engine/introduction' },
+						{
+							label: 'Controllers',
+							autogenerate: { directory: 'engine/controllers' },
+						},
+						{
+							label: 'Tools',
+							autogenerate: { directory: 'engine/tools' },
+						},
+					],
+				},
+				{
+					label: 'Cauldron Authentication',
+					autogenerate: { directory: 'authentication/' }
+				},
+				{
+					label: 'packwiz_js',
+					slug: 'packwizjs',
 				},
 			],
 		}),
