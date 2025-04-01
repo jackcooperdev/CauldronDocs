@@ -1,4 +1,9 @@
-# Cauldron Authentication
+---
+title: Cauldron Authentication
+description: 'MAS page'
+sidebar:
+    label: Overview
+---
 
 > This Documentation is correct for version [1.3.1](https://github.com/jackcooperdev/CauldronAuthentication/releases/tag/1.3.1) of CauldronAuthentication
 

@@ -3,7 +3,6 @@ title: Cauldron Agent
 description: 'Index page for Cauldron Agent'
 ---
 
-# Cauldron Agent
 
 > This Documentation is correct for version [0.5.1](https://github.com/jackcooperdev/CauldronAgent/releases/tag/0.5.1)
 > of CauldronAgent
