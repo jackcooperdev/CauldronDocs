@@ -2,6 +2,7 @@
 title: Launcher
 description: 'Launcher Page'
 ---
+
 # Launcher Controller
 
 This controller allows for a game to be installed or launched onto the target system.
@@ -11,13 +12,15 @@ This controller allows for a game to be installed or launched onto the target sy
 ### launchGame (version, installOnly, loader, loaderVersion, authData, sessionID, overrides)
 
 Parameters:
+
 + `version`: Game Version
 + `installOnly`: Whether the game should boot or just install
 + `loader`: Game loader (Defaults to Vanilla)
 + `loaderVersion`: (Non-Vanilla Only) Exact loader version to use (Defaults to latest)
-  + Mark This as undefined to default. This is only really used for debug or existing profiles
+    + Mark This as undefined to default. This is only really used for debug or existing profiles
 + `authData`: Authentication Data for the logged-in user. Check the format [here](#example-auth-data-object)
-+ `sessionID`: can either be a UUID created using the [createSession](/engine/tools/session#createSession) function or declared as undefined to be generated.
++ `sessionID`: can either be a UUID created using the [createSession](/engine/tools/session#createSession) function or
+  declared as undefined to be generated.
 + `overrides`: List of JVM and Game arguments. See [here](#overrides) for information
 
 The function finishes when the boot process starts.
@@ -27,28 +30,33 @@ This function launches or installs the game based on the value of the dry variab
 ## Examples
 
 > Example, Launching a 1.7.10 vanilla client with no overrides
+
 ```js
 const launchGame = await launchGame('1.7.10',false,'vanilla','default',authData,false,{});
 // Returns SessionID
 ```
 
 > Example Launching a 1.7.10-forge client with overrides
+
 ```js
 const launchGame = await launchGame('1.7.10',false,'forge','default',authData,false,{ "jvm": {"launcher_name": "CauldronMC","ram":"8"}});
 // Returns SessionID
 ```
 
 > Example installing a 1.7.10-forge client with overrides
+
 ```js
 const launchGame = await launchGame('1.7.10',true,'forge','default',authData,false,{ "jvm": {"launcher_name": "CauldronMC","ram":"8"}});
 // Returns SessionID
 ```
 
-
 ## Appendix
 
 ### Example Auth Data Object
-> For Information on how to retrieve this data, check out the [Cauldron Authentication](/authentication/introduction) plugin.
+
+> For Information on how to retrieve this data, check out the [Cauldron Authentication](/authentication/introduction)
+> plugin.
+
 ```json
 {
   "xui": "11405986214278243236",
@@ -62,6 +70,7 @@ const launchGame = await launchGame('1.7.10',true,'forge','default',authData,fal
 ```
 
 ### Overrides
+
 **Overrides** (or flag overrides) are changes made to how Minecraft boots. There are two types of override game and jvm.
 
 > Example of an override object
@@ -75,7 +84,9 @@ const launchGame = await launchGame('1.7.10',true,'forge','default',authData,fal
   "jvm": {"launcher_name": "CauldronMC","ram":"8"}
 }
 ```
-> For A full list of arguments click [here](https://minecraft.wiki/w/Minecraft_Wiki:Projects/wiki.vg_merge/Launching_the_game#Arguments)
+
+> For A full list of arguments
+> click [here](https://minecraft.wiki/w/Minecraft_Wiki:Projects/wiki.vg_merge/Launching_the_game#Arguments)
 
 
 

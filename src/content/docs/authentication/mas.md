@@ -71,7 +71,9 @@ If the access token is valid, it will return the following
 }
 
 ```
+
 The key items to take note of are:
+
 + `UUID`: This is the accounts user id. Not the Minecraft UUID
 + `MINECRAFT_ACCESS_TOKEN`: This is the access token to authenticate with Minecraft.
 

@@ -5,8 +5,8 @@ sidebar:
     label: Overview
 ---
 
-> This Documentation is correct for version [1.3.1](https://github.com/jackcooperdev/CauldronAuthentication/releases/tag/1.3.1) of CauldronAuthentication
-
+> This Documentation is correct for
+> version [1.3.1](https://github.com/jackcooperdev/CauldronAuthentication/releases/tag/1.3.1) of CauldronAuthentication
 
 ## What does this do?
 
@@ -36,12 +36,12 @@ Wiki.vg was a great resource that provided lots of information on how various pa
 It has been merged into Minecraft Wiki
 and can be viewed [here](https://minecraft.wiki/w/Microsoft_authentication#Navigation)
 
-
 ## Functions
 
 ### startAuthenticationFlow (access_token)
 
-This function performs the authentication flow turning a microsoft access token into a minecraft access token and getting the profile information for the user.
+This function performs the authentication flow turning a microsoft access token into a minecraft access token and
+getting the profile information for the user.
 
 It takes the following parameters
 
@@ -66,7 +66,7 @@ the function will return an object that can be used to launch a Minecraft Instan
 
 ## Additional Modules
 
-| Name                       | Import                                     | Description                                 |
-|----------------------------|--------------------------------------------|---------------------------------------------|
+| Name                       | Import                                      | Description                                 |
+|----------------------------|---------------------------------------------|---------------------------------------------|
 | [MAS](/authentication/mas) | `@jackcooperdev/cauldronauthentication/mas` | Provides Access to the individual functions |
 
