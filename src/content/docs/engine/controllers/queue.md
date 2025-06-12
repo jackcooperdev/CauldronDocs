@@ -2,6 +2,7 @@
 title: Queue
 description: 'Queue Page'
 ---
+
 # Queue Controller
 
 This controller handles the creation of download queues.
@@ -19,7 +20,6 @@ This function takes the following parameters:
 This function will loop until all files have been downloaded or an item fails a set number of times.
 
 The function will return an array of failed items in the [same](#queue-format) format.
-
 
 ## Appendix
 

@@ -2,6 +2,7 @@
 title: File Tools
 description: 'File Tools Page'
 ---
+
 # File Tools
 
 This tools provides a way of downloading, extracting and verifying files.
@@ -10,7 +11,7 @@ This tools provides a way of downloading, extracting and verifying files.
 
 ### download (url, location, fileName)
 
-This function downloads the declared file. 
+This function downloads the declared file.
 
 It takes the following parameters:
 

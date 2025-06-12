@@ -2,19 +2,22 @@
 title: packwiz_js
 description: 'Packwiz Documentation'
 ---
-> This Documentation is correct for version [1.0.3](https://github.com/jackcooperdev/packwiz_js/releases/tag/1.0.3) of packwiz_js
+
+> This Documentation is correct for version [1.0.8](https://github.com/jackcooperdev/packwiz_js/releases/tag/1.0.8) of
+> packwiz_js
 
 ## What does this do?
+
 Packwiz is a command line tool for creating Minecraft modpacks.
 Instead of managing JAR files directly, packwiz creates TOML metadata files.
 Packwiz_js allows for packwiz to be used in Node.js projects.
 
-
 ## License Information
-This project is licensed under [GPL 3.0](https://choosealicense.com/licenses/gpl-3.0/) so please make sure that your project follows the license guidelines.
+
+This project is licensed under [GPL 3.0](https://choosealicense.com/licenses/gpl-3.0/) so please make sure that your
+project follows the license guidelines.
 
 ## Setup
-
 
 1. Download packwiz [here](https://packwiz.infra.link/) and either place in system path or take note of the path.
 2. Install the package with the command below.
@@ -26,7 +29,6 @@ npm i @jackcooperdev/packwiz_js
 ## Functions
 
 ### createPack (fileData, dir, packwizLoc)
-
 
 This function creates a modpack from the data provided into the specified directory.
 
@@ -82,7 +84,6 @@ It takes the following parameters
 + `outPath` - Output Path
 + `packwizLoc` - The location of the packwiz executable. This can be left blank if packwiz is on the path.
 + `nameOverride` - Override Name of modpack
-
 
 ### importFromModrinth (mrPath, outPath, packWizLoc, nameOverride)
 

@@ -1,8 +1,14 @@
+---
+title: Welcome to Cauldron
+description: Get started building your docs site with Starlight.
+template: doc
+---
 # Welcome to Cauldron
+
 ## What is Cauldron?
 
 Cauldron is a collection of projects
-aiming to create a web-based minecraft launcher that allows for the user to create and share profiles
+aiming to create a cli-based minecraft launcher that allows for the user to create and share profiles
 (both vanilla and modded) to friends.
 In the future, more social aspects will aim to be created;
 also server creation tools are planned to be added allowing for seamless server creation from profiles.
@@ -27,11 +33,11 @@ for example, a web-based client or through discord.
 
 > Some packages may be unavailable while in development
 
-| Name                                                            | Import                                                                    | Description                                                                                     |
-|-----------------------------------------------------------------|---------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|
-| [CauldronAgent](https://docs.cauldronmc.com/agent/introduction) | [Latest Releases](https://github.com/jackcooperdev/CauldronAgent/releases) | Client that manages profiles and provides an local REST interface for other applications to use |
-| CauldronAPI                                                     | Private                                                                   | REST API Responsible for saving profiles and modpacks.                                          |
-| [CauldronEngine](https://docs.cauldronmc.com/engine/introduction)                          | ```@jackcooperdev/cauldronengine/```                                       | Responsible for Downloading and Running Minecraft Instances                                     |
-| [CauldronAuthentication](https://docs.cauldronmc.com/authentication/introduction)          | ```@jackcooperdev/cauldronauthentication/```                               | Responsible for Authenticating Minecraft Users                                                  |
-| [packwiz_js](https://docs.cauldronmc.com/packwizjs)                                        | ```@jackcooperdev/packwiz_js/```                                           | NodeJS package that assists in creating / converting packwiz modpacks to JSON                   |
+| Name                                                                                  | Import                                                                   | Description                                                                                           |
+|---------------------------------------------------------------------------------------|--------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------|
+| [CauldronCLI](https://docs.cauldronmc.com/cli/introduction)                           | [Latest Releases](https://github.com/jackcooperdev/CauldronCLI/releases) | Client that manages profiles and provides a CLI and websocket interface for other applications to use |
+| CauldronAPI                                                                           | Private                                                                  | REST API Responsible for saving profiles and modpacks.                                                |
+| [CauldronEngine](https://docs.cauldronmc.com/cli/engine/introduction)                 | ```@jackcooperdev/cauldronengine/```                                     | Responsible for Downloading and Running Minecraft Instances                                           |
+| [CauldronAuthentication](https://docs.cauldronmc.com/cli/authentication/introduction) | ```@jackcooperdev/cauldronauthentication/```                             | Responsible for Authenticating Minecraft Users                                                        |
+| [packwiz_js](https://docs.cauldronmc.com/cli/packwizjs)                               | ```@jackcooperdev/packwiz_js/```                                         | NodeJS package that assists in creating / converting packwiz modpacks to JSON                         |
 
