@@ -24,14 +24,11 @@ project follows the license guidelines.
 
 >You May need to restart your computer for it to be added to PATH.
 
-2. Follow Setup Guide [here](/cli/setup)
+2. Follow Setup Guide [here](https://docs.cauldronmc.com/cli/setup)
 
-## Using CauldronEngine
+## Using CauldronCLI
 
-You can use the CLI in two ways:
-
-1. Using the cli. See [here] for information.
-2. Communication with the cli through websocket commands. See [here] for information
+List of Commands Can be found [here](https://docs.cauldronmc.com/cli/introduction)
 
 ## Information
 

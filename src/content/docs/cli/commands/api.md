@@ -5,7 +5,7 @@ description: 'API Page '
 
 These commands manage credentials linked to the CLI to access the API. They can be run in two ways
 
-## Though the CLI
+## Through the CLI
 
 ### login
 Login to CauldronAPI

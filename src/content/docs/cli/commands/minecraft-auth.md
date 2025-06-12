@@ -5,7 +5,7 @@ description: 'MC Account Page '
 
 These commands manage Minecraft Accounts attactched to the CLI . They can be run in two ways
 
-## Though the CLI
+## Through the CLI
 
 ### add
 Add A Minecraft Profile
