@@ -1,8 +1,3 @@
----
-title: Welcome to Cauldron
-description: Get started building your docs site with Starlight.
-template: doc
----
 # Welcome to Cauldron
 
 ## What is Cauldron?
