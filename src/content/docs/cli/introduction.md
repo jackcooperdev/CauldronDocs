@@ -20,7 +20,7 @@ project follows the license guidelines.
 
 ## Setup
 
-1. To Install the package download the installer from [here](https://github.com/jackcooperdev/CauldronCLI/releases/tag/v0.0.1).
+1. To Install the package download the installer from [here](https://github.com/jackcooperdev/CauldronCLI/releases).
 
 >You May need to restart your computer for it to be added to PATH.
 
