@@ -5,7 +5,7 @@ description: 'Installation Page '
 
 These commands manage the installation of CauldronCLI. They can be run in two ways
 
-## Though the CLI
+## Through the CLI
 
 ### setup
 

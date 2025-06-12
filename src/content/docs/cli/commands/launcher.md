@@ -5,7 +5,7 @@ description: 'Launcher Page '
 
 These commands launch instances of Minecraft. They can be run in two ways
 
-## Though the CLI
+## Through the CLI
 
 ### launch
 Launch an instance of Minecraft that is linked to a profile
