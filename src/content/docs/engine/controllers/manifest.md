@@ -22,7 +22,6 @@ This function collects all the necessary data to launch the selected version it 
 ```json
 {
   "spec": "Contains Version Manifest of selected Version (Object)",
-  "jvmMeta": "Contains JVM Manifest (Object)",
   "jvmMani": "Contains Info for required JVM Version (Object)",
   "jvmComp": "JVM Version Name (String)",
   "assets": "Contain Assets Manifest For Version (Object)",
@@ -33,16 +32,18 @@ This function collects all the necessary data to launch the selected version it 
   "assetsDownloaded": "Whether or not assets have been downloaded on local system (Boolean)",
   "jvmDownloaded": "Whether or not JVM have been downloaded on local system (Boolean)",
   "libsDownloaded": "Whether or not Libraries have been downloaded on local system (Boolean)",
-  "loaderVersion": "Loader Version (String)"
+  "loaderVersion": "Loader Version (String)",
+  "needsPost": "Whether or not the installation requires post processing",
+  "postData": "Data releating to post processing"
 }
 ```
 
 Examples:
 
-+ `1.7.10 Vanilla` [here](http://files.cauldronmc.com/debug/exampleVanilla.json)
-+ `1.7.10 Forge` [here](http://files.cauldronmc.com/debug/exampleForge.json)
++ `1.7.10 Vanilla` [here](http://resources.cauldronmc.com/debug/exampleVanilla.json)
++ `1.7.10 Forge` [here](http://resources.cauldronmc.com/debug/exampleForge.json)
 
-To see a complete example of the output click [here](http://files.cauldronmc.com/debug/exampleManifest.json).
+To see a complete example of the output click [here](http://resources.cauldronmc.com/debug/exampleManifest.json).
 
 ### checkManifest (fileName, url, type)
 
@@ -65,7 +66,7 @@ This Profile Cannot be launched offline. Please Launch it Online first
 
 ### getPackwizJVM ()
 
-> This is a function directly used in the [Cauldron Agent](/agent/introduction) Project. This may not be useful to you
+> This is a function directly used in the [Cauldron CLI](/cli/introduction) Project. This may not be useful to you
 
 This function returns the manifests required to allow for the [packwiz](https://packwiz.infra.link/) application to run.
 
@@ -94,7 +95,7 @@ It returns the following object:
   to convert.
 
 > Refer to the relevant manifest converter to see information on how the assets are converted. However, knowledge of the
-> functions is not needed to use the manifest future.
+> functions is not needed to use the manifest function.
 
 
 

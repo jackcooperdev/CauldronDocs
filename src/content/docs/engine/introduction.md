@@ -3,7 +3,7 @@ title: Cauldron Engine
 description: 'Index page for Cauldron Engine'
 ---
 
-> This Documentation is correct for version [0.5.4](https://github.com/jackcooperdev/CauldronEngine/releases/tag/0.5.4)
+> This Documentation is correct for version [0.6.2](https://github.com/jackcooperdev/CauldronEngine/releases/tag/0.6.2)
 > of CauldronEngine
 
 ## What does this do?
@@ -49,12 +49,8 @@ Cauldron Engine is split into multiple exports. They are listed below.
 | [File Tools](/engine/tools/file)             | ```@jackcooperdev/cauldronengine/fileTools```   | Set of Tools to download / verify files     |
 | [Session Manager](/engine/tools/session)     | ```@jackcooperdev/cauldronengine/session```     | Manages Minecraft Sessions                  |
 | [Check Connection](/engine/tools/connection) | ```@jackcooperdev/cauldronengine/online```      | Checks if Client is Online                  |
-| [Auth Verifier](/engine/tools/auth)          | ```@jackcooperdev/cauldronengine/auth```        | Check Access Token Validity                 |
 | [Launch File Builder](/engine/tools/launch)  | ```@jackcooperdev/cauldronengine/launchBuild``` | Builds launch File                          |
 
-### Plugins
-
-Plugins are used to allow for other loaders to be used for more information go [here]().
 
 ## Information
 

@@ -1,9 +1,7 @@
 ---
-title: MAS
+title: MAS (Microsoft Authentication Scheme)
 description: 'MAS page'
 ---
-
-# MAS (Microsoft Authentication Scheme)
 
 These Functions are used for the authentication flow. They can be used separate if needed.
 

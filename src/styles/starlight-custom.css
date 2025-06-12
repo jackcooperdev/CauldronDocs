@@ -1,0 +1,63 @@
+/*
+* This CSS file is used to customize Starlight's default styles.
+* It's imported via the `customCss` array in astro.config.mjs.
+*/
+
+/*
+ * Adjusts the overall content width. This can make the main content area
+ * wider or narrower, which in turn can affect how much space is left
+ * for sidebars like "On this page".
+ * The default is often 45rem. Increasing it will make the main content wider.
+ * Decreasing it will make the main content narrower, potentially pushing
+ * the "On this page" sidebar closer to the edge or making it feel less constrained.
+ */
+:root {
+    --sl-content-width: 60rem; /* Adjust this value (e.g., 50rem, 70rem) as needed */
+}
+
+/*
+ * Restricts the maximum width of paragraph and list item text within
+ * the main markdown content. This ensures readability even if
+ * `--sl-content-width` is set to a very large value.
+ * This does not directly control the "On this page" sidebar's width,
+ * but it prevents very long lines of text in your main content.
+ */
+.sl-markdown-content :is(p, li) {
+    max-width: 45rem; /* Keeps body text readable, typically around 65-75 characters per line */
+}
+
+/*
+ * To directly influence the "On this page" sidebar (Table of Contents),
+ * you'll need to find its specific Starlight-generated class.
+ * You can do this by inspecting your live site in the browser's developer tools.
+ * Look for elements within the right sidebar, e.g., <aside>, <nav>, or <div>
+ * that contain the "On this page" links. They often have classes like
+ * `sl-flex` or specific Starlight internal classes.
+ *
+ * Example (you'll need to verify the actual class names):
+ * If you find a class like `sl-table-of-contents-container` or similar:
+ */
+.sl-flex.sl-relative.lg\:sl-w-full.xl\:sl-w-auto.xl\:sl-flex-shrink-0.xl\:sl-block {
+    /* This is a common pattern for Starlight's right sidebar container. */
+    /* You might need to adjust based on your Starlight version or specific setup. */
+    width: 280px; /* Adjust this to your desired fixed width */
+    /* Or use max-width and min-width for responsiveness */
+    /* max-width: 300px; */
+    /* min-width: 200px; */
+}
+
+/* Another possible class for the actual navigation within the sidebar */
+.sl-markdown-content.sl-text-sm {
+    /* This might target the content *within* the sidebar if it uses markdown styles */
+    /* You may want to be more specific to avoid affecting other text */
+    /* For example, if the sidebar has an ID or more specific class */
+    /* #starlight-right-sidebar-toc .sl-markdown-content.sl-text-sm { */
+    /* font-size: 0.85rem; */
+    /* } */
+}
+
+/* If the "On this page" sidebar needs less padding or margin to appear smaller */
+.starlight-sidebar-toc-wrapper { /* Placeholder - find actual class */
+    padding: 0.5rem; /* Reduce padding */
+    margin-left: 0.5rem; /* Adjust margin if it's contributing to width */
+}
