@@ -3,9 +3,7 @@ title:  CauldronAPI Managment
 description: 'API Page '
 ---
 
-These commands manage credentials linked to the CLI to access the API. They can be run in two ways
-
-## Through the CLI
+These commands manage credentials linked to the CLI to access the API.
 
 ### login
 Login to CauldronAPI
@@ -13,22 +11,20 @@ Login to CauldronAPI
 
 Usage:
 ```bash
-cauldroncli add
+cauldroncli login [options]
 ```
 
-This opens a web browser prompting the user to log in to CauldronAPI.
++ `-l` `--device_code`: Device Code (Used for Headless Use See [here]() for information)
++ `-h` `--headless`: Removes User Prompts
+
+Logs the user in CauldronAPI
 
 ### logout
 Logout from CauldronAPI
 
 Usage:
 ```bash
-cauldroncli remove
+cauldroncli logout
 ```
 
 This removes the account from the CLI.
-
-
-
-## Through Websocket
-> WIP

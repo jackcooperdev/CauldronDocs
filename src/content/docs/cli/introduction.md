@@ -4,7 +4,7 @@ description: 'Index page for Cauldron CLI'
 ---
 
 
-> This Documentation is correct for version [0.0.2](https://github.com/jackcooperdev/CauldronCLI/releases/tag/v0.0.2)
+> This Documentation is correct for version [0.0.3](https://github.com/jackcooperdev/CauldronCLI/releases/tag/v0.0.3)
 > of CauldronCLI
 
 ## What does this do?
