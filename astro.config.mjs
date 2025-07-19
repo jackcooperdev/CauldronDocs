@@ -30,16 +30,17 @@ export default defineConfig({
                     label: 'Cauldron CLI',
                     items: [
                         {label: 'Overview', slug: 'cli/introduction'},
-                        {label: 'Setup', slug: 'cli/setup'},
                         {
                             label: 'Commands',
                             items: [
-                                {label: 'Launcher', slug: 'cli/commands/launcher'},
-                                {label: 'Minecraft Auth', slug: 'cli/commands/minecraft-auth'},
                                 {label: 'Installation', slug: 'cli/commands/installation'},
                                 {label: 'API Authentication', slug: 'cli/commands/api'},
+                                {label: 'Minecraft Auth', slug: 'cli/commands/minecraft-auth'},
+                                {label: 'Launcher', slug: 'cli/commands/launcher'},
+                                {label: 'Profiles', slug: 'cli/commands/profile'},
                             ]
                         },
+                        {label: 'Websocket', slug: 'cli/websocket'},
                     ],
                 },
                 {

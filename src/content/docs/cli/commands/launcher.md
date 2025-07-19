@@ -3,9 +3,8 @@ title:  Launcher
 description: 'Launcher Page '
 ---
 
-These commands launch instances of Minecraft. They can be run in two ways
+These commands launch instances of Minecraft.
 
-## Through the CLI
 
 ### launch
 Launch an instance of Minecraft that is linked to a profile
@@ -21,6 +20,7 @@ Options:
 + `-p <profile>` `--profile <profile>`: Profile ID (Exclude For Interactive List)
 + `-m <account_id>` `--account <account_id>`: Minecraft Account ID (see here on how to view them) (Defaults to first in list)
 + `-i` `--dry`: Install but don't launch (default: false)
++ `-h` `--headless`: Removes User Prompts
 
 This will install and launch the requested Minecraft Instance and display the log in the terminal
 
@@ -39,8 +39,6 @@ Options:
 + `-l <loader>` `--mc_loader <loader>`: Game Loader (Default: Vanilla)
 + `-m <account_id>` `--account <account_id>`: Minecraft Account ID (see here on how to view them) (Defaults to first in list)
 + `-i` `--dry`: Install but don't launch (default: false)
++ `-h` `--headless`: Removes User Prompts
 
 This will install and launch the requested Minecraft Instance and display the log in the terminal
-
-## Through Websocket
-> WIP
