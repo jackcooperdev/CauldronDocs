@@ -1,36 +1,31 @@
 ---
-title:  Installation Managment
-description: 'Installation Page '
+title: Installation Management
+description: 'Installation Page'
 ---
 
-These commands manage the installation of CauldronCLI.
+These commands manage the Cauldron folder used by CauldronCLI.
 
+> The location of the Cauldron folder is set by `CAULDRON_PATH` in
+> [cauldroncli_admin.json](/cli/introduction#cauldroncli_adminjson).
 
-
-### reset
+## reset
 
 Usage:
+
 ```bash
 cauldroncli reset
 ```
 
-This function will perform the following actions:
-1. Uninstall CauldronCLI
-2. Download JVM amd Packwiz
+Deletes the Cauldron folder and recreates an empty one. This removes all installed versions, modpacks and sessions.
 
-> You can change the root path by changing the variable in cauldroncli_admin.json which exists in your user folder.
-> After changing the path it is recommended to run `cauldroncli uninstall` before changing the path.
-
-Once these actions are completed the cli is ready to be used.
-
-### uninstall
+## uninstall
 
 Usage:
+
 ```bash
 cauldroncli uninstall
 ```
 
-This function will perform the following actions:
+Deletes the Cauldron folder.
 
-1. Log You out of CauldronAPI
-2. Uninstall CauldronCLI
+> `cauldroncli_admin.json` in your home folder is not removed.

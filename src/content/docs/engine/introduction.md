@@ -3,14 +3,18 @@ title: Cauldron Engine
 description: 'Index page for Cauldron Engine'
 ---
 
-> This Documentation is correct for version [0.6.2](https://github.com/jackcooperdev/CauldronEngine/releases/tag/0.6.2)
+> This Documentation is correct for version [0.13.1](https://github.com/jackcooperdev/CauldronEngine)
 > of CauldronEngine
 
 ## What does this do?
 
 Cauldron Engine is a Node.js based minecraft launcher. It handles downloading and booting Minecraft Instances. It
-supports all vanilla versions of minecraft. Additionally, there is support for plugins where additional loaders (such as
-forge) can be booted.
+supports all vanilla versions of minecraft. Additionally, the following loaders are supported:
+
++ `vanilla`
++ `forge`
++ `fabric`
++ `neoforge`
 
 ## License Information
 
@@ -25,32 +29,61 @@ To Install the package, run the following command
 npm i @jackcooperdev/cauldronengine
 ```
 
+## Quick Start
+
+```js
+const { startGame } = require('@jackcooperdev/cauldronengine/client');
+
+// Installs (if needed) and boots a 1.20.1 Forge client
+const sessionID = await startGame('1.20.1', { type: 'forge' }, authData);
+```
+
+See the [Client](/engine/controllers/client) controller for more information.
+
 ## Using CauldronEngine
 
 Cauldron Engine is split into multiple exports. They are listed below.
 
 ### Controllers
 
-| Name                                          | Import                                        | Description                                   |
-|-----------------------------------------------|-----------------------------------------------|-----------------------------------------------|
-| [Launcher](/engine/controllers/launcher)      | ```@jackcooperdev/cauldronengine/launcher```  | Manages the launching of a Minecraft Instance |
-| [Manifest](/engine/controllers/manifest)      | ```@jackcooperdev/cauldronengine/manifest```  | Acquires Relevant Data for launch             |
-| [Assets](/engine/controllers/asset)           | ```@jackcooperdev/cauldronengine/assets```    | Manages Asset Download                        |
-| [JVM](/engine/controllers/jvm)                | ```@jackcooperdev/cauldronengine/jvm```       | Manages JVM Download                          |
-| [Libraries](/engine/controllers/library)      | ```@jackcooperdev/cauldronengine/libraries``` | Manages Library Download                      |
-| [Queue Management](/engine/controllers/queue) | ```@jackcooperdev/cauldronengine/queue```     | Manages Download Queues                       |
+| Name                                          | Import                                       | Description                                         |
+|-----------------------------------------------|----------------------------------------------|-----------------------------------------------------|
+| [Client](/engine/controllers/client)          | ```@jackcooperdev/cauldronengine/client```   | Installs and launches a Minecraft Client            |
+| [Manifest](/engine/controllers/manifest)      | ```@jackcooperdev/cauldronengine/manifest``` | Acquires Relevant Data for install and launch       |
+| [Queue Management](/engine/controllers/queue) | ```@jackcooperdev/cauldronengine/queue```    | Manages Download Queues                             |
 
 ### Tools
 
 | Name                                         | Import                                          | Description                                 |
 |----------------------------------------------|-------------------------------------------------|---------------------------------------------|
 | [Logger](/engine/tools/logger)               | ```@jackcooperdev/cauldronengine/logger```      | Logging                                     |
-| [Compatability](/engine/tools/compat)        | ```@jackcooperdev/cauldronengine/compat```      | Tool to Ensure Cross-Platform Compatability |
+| [Compatibility](/engine/tools/compat)        | ```@jackcooperdev/cauldronengine/compat```      | Tool to Ensure Cross-Platform Compatibility |
 | [File Tools](/engine/tools/file)             | ```@jackcooperdev/cauldronengine/fileTools```   | Set of Tools to download / verify files     |
-| [Session Manager](/engine/tools/session)     | ```@jackcooperdev/cauldronengine/session```     | Manages Minecraft Sessions                  |
 | [Check Connection](/engine/tools/connection) | ```@jackcooperdev/cauldronengine/online```      | Checks if Client is Online                  |
-| [Launch File Builder](/engine/tools/launch)  | ```@jackcooperdev/cauldronengine/launchBuild``` | Builds launch File                          |
+| [Launch File Builder](/engine/tools/launch)  | ```@jackcooperdev/cauldronengine/launchbuild``` | Builds launch File                          |
 
+### Environment Variables
+
+| Variable          | Description                                                                 | Default                            |
+|-------------------|-----------------------------------------------------------------------------|------------------------------------|
+| `CAULDRON_PATH`   | Root folder used for all installed files. See [grabPath](/engine/tools/compat#grabpath) | `.cauldron` in the user's home / AppData folder |
+| `RESOURCE_SERVER` | Server used to fetch version specs, loader manifests and post processors    | `https://resources.cauldronmc.com` |
+
+## Migrating from 0.6.x
+
+Version 0.13.0 reworked the engine around a single install object. The following exports have been removed:
+
+| Removed                          | Replacement                                                        |
+|----------------------------------|--------------------------------------------------------------------|
+| `launcher` (`launchGame`)        | [`client`](/engine/controllers/client) (`startGame`, `installGame`) |
+| `assets` (`getAssets`)           | Handled by [`installGame`](/engine/controllers/client#installgame-version-loaderinfo) |
+| `jvm` (`checkJVM`, `checkCompat`) | Handled by [`installGame`](/engine/controllers/client#installgame-version-loaderinfo) |
+| `libraries` (`getLibraries`)     | Handled by [`installGame`](/engine/controllers/client#installgame-version-loaderinfo) |
+| `session` (Session Manager)      | Session IDs are now returned by [`startGame`](/engine/controllers/client#startgame-version-loaderinfo-authinfo-overrides) |
+| `manifest` (`getManifests`, `checkManifest`, `getPackwizJVM`) | [`getCEObject`](/engine/controllers/manifest#getceobject-installobject) |
+
+The format of the authentication data passed to the engine has also changed.
+See [Auth Info](/engine/controllers/client#auth-info).
 
 ## Information
 

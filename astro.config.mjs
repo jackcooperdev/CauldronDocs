@@ -10,6 +10,22 @@ export default defineConfig({
         sitemap(),
         starlight({
             title: 'Cauldron Documentation',
+            logo: {
+                src: './src/assets/logo.png',
+            },
+            favicon: '/favicon.png',
+            head: [
+                {tag: 'link', attrs: {rel: 'apple-touch-icon', href: '/apple-touch-icon.png'}},
+            ],
+            editLink: {
+                baseUrl: 'https://github.com/jackcooperdev/CauldronDocs/edit/master/',
+            },
+            expressiveCode: {
+                styleOverrides: {
+                    borderRadius: '0.5rem',
+                    codeFontSize: '0.85rem',
+                },
+            },
             social: [
                 { icon: 'github', label: 'GitHub', href: 'https://github.com/jackcooperdev' }
             ],
@@ -33,14 +49,11 @@ export default defineConfig({
                         {
                             label: 'Commands',
                             items: [
-                                {label: 'Installation', slug: 'cli/commands/installation'},
-                                {label: 'API Authentication', slug: 'cli/commands/api'},
-                                {label: 'Minecraft Auth', slug: 'cli/commands/minecraft-auth'},
                                 {label: 'Launcher', slug: 'cli/commands/launcher'},
-                                {label: 'Profiles', slug: 'cli/commands/profile'},
+                                {label: 'Modpacks', slug: 'cli/commands/modpacks'},
+                                {label: 'Installation', slug: 'cli/commands/installation'},
                             ]
                         },
-                        {label: 'Websocket', slug: 'cli/websocket'},
                     ],
                 },
                 {
@@ -49,21 +62,25 @@ export default defineConfig({
                         {label: 'Overview', slug: 'engine/introduction'},
                         {
                             label: 'Controllers',
-                            autogenerate: {directory: 'engine/controllers'},
+                            items: [{autogenerate: {directory: 'engine/controllers'}}],
                         },
                         {
                             label: 'Tools',
-                            autogenerate: {directory: 'engine/tools'},
+                            items: [{autogenerate: {directory: 'engine/tools'}}],
                         },
                     ],
                 },
                 {
                     label: 'Cauldron Authentication',
-                    autogenerate: {directory: 'authentication/'}
+                    items: [{autogenerate: {directory: 'authentication/'}}]
                 },
                 {
-                    label: 'packwiz_js',
-                    slug: 'packwizjs',
+                    label: 'Cauldron Mod Manager',
+                    items: [
+                        {label: 'Overview', slug: 'modmanager/introduction'},
+                        {label: 'Pack', slug: 'modmanager/pack'},
+                        {label: 'Bootstrap', slug: 'modmanager/bootstrap'},
+                    ],
                 },
             ],
         }),

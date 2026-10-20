@@ -1,63 +1,200 @@
 /*
-* This CSS file is used to customize Starlight's default styles.
-* It's imported via the `customCss` array in astro.config.mjs.
-*/
-
-/*
- * Adjusts the overall content width. This can make the main content area
- * wider or narrower, which in turn can affect how much space is left
- * for sidebars like "On this page".
- * The default is often 45rem. Increasing it will make the main content wider.
- * Decreasing it will make the main content narrower, potentially pushing
- * the "On this page" sidebar closer to the edge or making it feel less constrained.
+ * Cauldron theme for Starlight.
+ * Imported via the `customCss` array in astro.config.mjs.
  */
+
+/* ---------- Colours (dark mode) ---------- */
+/* Emerald accent and near-black greys taken from the logo */
 :root {
-    --sl-content-width: 60rem; /* Adjust this value (e.g., 50rem, 70rem) as needed */
+    --sl-color-accent-low: hsl(153, 60%, 14%);
+    --sl-color-accent: hsl(153, 70%, 42%);
+    --sl-color-accent-high: hsl(153, 75%, 80%);
+
+    --sl-color-white: hsl(0, 0%, 100%);
+    --sl-color-gray-1: hsl(165, 12%, 93%);
+    --sl-color-gray-2: hsl(165, 6%, 77%);
+    --sl-color-gray-3: hsl(165, 5%, 57%);
+    --sl-color-gray-4: hsl(165, 6%, 37%);
+    --sl-color-gray-5: hsl(165, 9%, 22%);
+    --sl-color-gray-6: hsl(165, 14%, 12%);
+    --sl-color-black: hsl(170, 20%, 6%);
+
+    --cauldron-glow: hsla(153, 80%, 40%, 0.22);
+    --cauldron-note-bg: hsla(153, 70%, 42%, 0.08);
+    --cauldron-warn-bg: hsl(38, 70%, 18%);
+    --cauldron-warn-text: hsl(42, 95%, 82%);
+
+    /* Wider layout for tables and code, with prose capped below */
+    --sl-content-width: 56rem;
 }
 
-/*
- * Restricts the maximum width of paragraph and list item text within
- * the main markdown content. This ensures readability even if
- * `--sl-content-width` is set to a very large value.
- * This does not directly control the "On this page" sidebar's width,
- * but it prevents very long lines of text in your main content.
- */
+/* ---------- Colours (light mode) ---------- */
+:root[data-theme='light'] {
+    --sl-color-accent-low: hsl(153, 55%, 91%);
+    --sl-color-accent: hsl(153, 96%, 24%);
+    --sl-color-accent-high: hsl(155, 90%, 15%);
+
+    --sl-color-white: hsl(170, 20%, 6%);
+    --sl-color-gray-1: hsl(165, 14%, 12%);
+    --sl-color-gray-2: hsl(165, 9%, 22%);
+    --sl-color-gray-3: hsl(165, 6%, 36%);
+    --sl-color-gray-4: hsl(165, 5%, 55%);
+    --sl-color-gray-5: hsl(165, 6%, 80%);
+    --sl-color-gray-6: hsl(165, 14%, 93%);
+    --sl-color-gray-7: hsl(165, 20%, 97.5%);
+    --sl-color-black: hsl(0, 0%, 100%);
+
+    --cauldron-glow: hsla(153, 80%, 30%, 0.16);
+    --cauldron-note-bg: hsla(153, 96%, 24%, 0.06);
+    --cauldron-warn-bg: hsl(44, 100%, 90%);
+    --cauldron-warn-text: hsl(30, 80%, 22%);
+}
+
+/* ---------- Readability ---------- */
 .sl-markdown-content :is(p, li) {
-    max-width: 45rem; /* Keeps body text readable, typically around 65-75 characters per line */
+    max-width: 44rem;
 }
 
-/*
- * To directly influence the "On this page" sidebar (Table of Contents),
- * you'll need to find its specific Starlight-generated class.
- * You can do this by inspecting your live site in the browser's developer tools.
- * Look for elements within the right sidebar, e.g., <aside>, <nav>, or <div>
- * that contain the "On this page" links. They often have classes like
- * `sl-flex` or specific Starlight internal classes.
- *
- * Example (you'll need to verify the actual class names):
- * If you find a class like `sl-table-of-contents-container` or similar:
- */
-.sl-flex.sl-relative.lg\:sl-w-full.xl\:sl-w-auto.xl\:sl-flex-shrink-0.xl\:sl-block {
-    /* This is a common pattern for Starlight's right sidebar container. */
-    /* You might need to adjust based on your Starlight version or specific setup. */
-    width: 280px; /* Adjust this to your desired fixed width */
-    /* Or use max-width and min-width for responsiveness */
-    /* max-width: 300px; */
-    /* min-width: 200px; */
+/* ---------- Header ---------- */
+header.header {
+    border-bottom: 1px solid var(--sl-color-hairline);
 }
 
-/* Another possible class for the actual navigation within the sidebar */
-.sl-markdown-content.sl-text-sm {
-    /* This might target the content *within* the sidebar if it uses markdown styles */
-    /* You may want to be more specific to avoid affecting other text */
-    /* For example, if the sidebar has an ID or more specific class */
-    /* #starlight-right-sidebar-toc .sl-markdown-content.sl-text-sm { */
-    /* font-size: 0.85rem; */
-    /* } */
+.site-title img {
+    height: 2rem;
+    width: auto;
 }
 
-/* If the "On this page" sidebar needs less padding or margin to appear smaller */
-.starlight-sidebar-toc-wrapper { /* Placeholder - find actual class */
-    padding: 0.5rem; /* Reduce padding */
-    margin-left: 0.5rem; /* Adjust margin if it's contributing to width */
+/* ---------- "Under construction" banner ---------- */
+.sl-banner {
+    --sl-color-banner-bg: var(--cauldron-warn-bg);
+    --sl-color-banner-text: var(--cauldron-warn-text);
+    font-size: var(--sl-text-sm);
+    font-weight: 500;
+}
+
+/* ---------- Inline code ---------- */
+.sl-markdown-content :not(pre) > code {
+    border: 1px solid var(--sl-color-hairline-light);
+    border-radius: 0.3rem;
+    padding: 0.1em 0.35em;
+    font-size: 0.875em;
+}
+
+.sl-markdown-content a code {
+    color: var(--sl-color-text-accent);
+}
+
+/* ---------- Blockquotes (used throughout as notes) ---------- */
+.sl-markdown-content blockquote {
+    border-inline-start: 3px solid var(--sl-color-accent);
+    background: var(--cauldron-note-bg);
+    border-radius: 0 0.5rem 0.5rem 0;
+    padding: 0.75rem 1rem;
+    color: var(--sl-color-gray-2);
+    font-style: normal;
+}
+
+.sl-markdown-content blockquote > :first-child {
+    margin-top: 0;
+}
+
+/* ---------- Tables ---------- */
+.sl-markdown-content table {
+    display: table;
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 1px solid var(--sl-color-hairline-light);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    font-size: var(--sl-text-sm);
+}
+
+.sl-markdown-content :is(th, td) {
+    border: none;
+    border-bottom: 1px solid var(--sl-color-hairline-light);
+    padding: 0.55rem 0.85rem;
+    vertical-align: top;
+}
+
+.sl-markdown-content tr:last-child td {
+    border-bottom: none;
+}
+
+.sl-markdown-content th {
+    background: var(--sl-color-gray-6);
+    color: var(--sl-color-white);
+    font-weight: 600;
+    text-align: start;
+}
+
+.sl-markdown-content td code {
+    white-space: nowrap;
+}
+
+/* Tables scroll instead of overflowing on small screens */
+@media (max-width: 50rem) {
+    .sl-markdown-content table {
+        display: block;
+        overflow-x: auto;
+    }
+}
+
+/* ---------- Headings ---------- */
+.sl-markdown-content h2 {
+    padding-bottom: 0.35rem;
+    border-bottom: 1px solid var(--sl-color-hairline);
+}
+
+/* ---------- Landing page ---------- */
+.hero {
+    position: relative;
+}
+
+/* Glow behind the logo. `closest-side` keeps the gradient fully faded
+   before it reaches the edge of the box, so it never ends in a hard line. */
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: -4rem -2rem -2rem;
+    background: radial-gradient(closest-side at 50% 30%, var(--cauldron-glow), transparent);
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Side-by-side hero layout: centre the glow on the logo column */
+@media (min-width: 50rem) {
+    .hero::before {
+        background: radial-gradient(closest-side at 72% 50%, var(--cauldron-glow), transparent);
+    }
+}
+
+.hero h1 {
+    background: linear-gradient(120deg, var(--sl-color-white) 30%, var(--sl-color-accent));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.hero img {
+    filter: drop-shadow(0 0 2.5rem var(--cauldron-glow));
+}
+
+.card {
+    border-radius: 0.75rem;
+    transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.card:hover {
+    border-color: var(--sl-color-accent);
+    transform: translateY(-2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .card,
+    .card:hover {
+        transition: none;
+        transform: none;
+    }
 }
