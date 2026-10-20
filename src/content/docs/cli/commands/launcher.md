@@ -1,44 +1,90 @@
 ---
-title:  Launcher
-description: 'Launcher Page '
+title: Launcher
+description: 'Launcher Page'
 ---
 
 These commands launch instances of Minecraft.
 
+## start
 
-### launch
-Launch an instance of Minecraft that is linked to a profile
-
+Install and launch an instance of Minecraft.
 
 Usage:
+
 ```bash
-cauldroncli launch [options]
+cauldroncli start [options]
 ```
 
 Options:
 
-+ `-p <profile>` `--profile <profile>`: Profile ID (Exclude For Interactive List)
-+ `-m <account_id>` `--account <account_id>`: Minecraft Account ID (see here on how to view them) (Defaults to first in list)
-+ `-i` `--dry`: Install but don't launch (default: false)
-+ `-h` `--headless`: Removes User Prompts
++ `-v <version>` `--mc_version <version>`: Minecraft Version (Required unless launching a saved modpack)
++ `-l <loader>` `--mc_loader <loader>`: Loader: `vanilla`, `forge`, `fabric` or `neoforge` (Default: `vanilla`)
++ `-x <version>` `--mc_loader_version <version>`: Loader Version (Default: recommended version)
++ `-n <name>` `--name <name>`: Instance Name. Also used as the modpack name
++ `-m <token>` `--account <token>`: Minecraft Access Token. See [Accounts](#accounts)
++ `-o <overrides>` `--overrides <overrides>`: Launch overrides as CSV. See [Overrides](#overrides)
++ `--curseforge_mods <mods>`: CSV of CurseForge mod slugs to install
++ `--modrinth_mods <mods>`: CSV of Modrinth mod slugs to install
++ `-c` `--cache`: Use the existing modpack called `<name>` instead of rebuilding it from the mod flags
++ `-i` `--dry`: Install but don't launch (Default: false)
++ `-g` `--headless`: Skip interactive elements
++ `-d` `--debug`: Output extra debugging information
 
-This will install and launch the requested Minecraft Instance and display the log in the terminal
+The game is installed (if needed) and launched. Once the game starts, its log is shown in the terminal until the game
+closes (unless `--dry` or `--headless` is used).
 
-### quick-launch
+Each instance runs in its own folder at `sessions/<name>` in the Cauldron folder. If `--name` is not given, the name
+`quick-<loader>-<version>` is used.
 
-Launch an instance of Minecraft that is not linked to a profile
+If `--name` matches an existing [modpack](/cli/commands/modpacks), its mods are installed and its Minecraft version
+and loader are used.
 
-Usage:
+### Examples
+
+> Launch 1.21.1 vanilla in demo mode
+
 ```bash
-cauldroncli quick-setup [options]
+cauldroncli start -v 1.21.1
 ```
 
-Options:
+> Launch 1.20.1 Forge with an account and 6GB of RAM
 
-+ `-v <version>` `--mc_version <version>`: Game Version (Required)
-+ `-l <loader>` `--mc_loader <loader>`: Game Loader (Default: Vanilla)
-+ `-m <account_id>` `--account <account_id>`: Minecraft Account ID (see here on how to view them) (Defaults to first in list)
-+ `-i` `--dry`: Install but don't launch (default: false)
-+ `-h` `--headless`: Removes User Prompts
+```bash
+cauldroncli start -v 1.20.1 -l forge -m <minecraft_access_token> -o ram=6,ram_low=2
+```
 
-This will install and launch the requested Minecraft Instance and display the log in the terminal
+> Create a Fabric modpack from Modrinth and launch it
+
+```bash
+cauldroncli start -v 1.21.1 -l fabric -n my-pack --modrinth_mods fabric-api,sodium
+```
+
+> Launch the same modpack again
+
+```bash
+cauldroncli start -n my-pack
+```
+
+### Accounts
+
+`--account` takes a Minecraft access token. This is the `access_token` returned by
+[Cauldron Authentication](/authentication/introduction#startauthenticationflow-microsoftaccesstoken).
+The username and UUID are read from the token.
+
+If no token is provided, the game launches in **demo mode**.
+
+If the token cannot be read, the command exits with `Invalid Token` (`no_account` in headless mode).
+
+### Overrides
+
+Overrides are passed as comma separated `key=value` pairs.
+
+| Key         | Description                           |
+|-------------|---------------------------------------|
+| `ram`       | Maximum RAM (GB)                      |
+| `ram_low`   | Minimum RAM (GB)                      |
+| `server_ip` | Join this server when the game starts |
+| `username`  | Override the player name              |
+
+Any other keys are ignored. To apply overrides to every launch, use
+[custom_args.json](/cli/introduction#custom_argsjson).

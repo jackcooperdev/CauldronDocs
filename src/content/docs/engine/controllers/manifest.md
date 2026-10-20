@@ -1,9 +1,9 @@
 ---
-title: Manifest
+title: Manifest Controller
+sidebar:
+  label: Manifest
 description: 'Manifest Page'
 ---
-
-# Manifest Controller
 
 This controller handles acquiring the various manifests and other relevant data required to install and launch the
 game.

@@ -3,8 +3,6 @@ title: File Tools
 description: 'File Tools Page'
 ---
 
-# File Tools
-
 This tools provides a way of downloading and verifying files.
 
 ## Functions

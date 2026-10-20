@@ -3,8 +3,6 @@ title: Logger
 description: 'Logger Page'
 ---
 
-# Logger
-
 This tool provides the engine's logger and a listener for logs sent from a running Minecraft instance.
 
 ## Exports

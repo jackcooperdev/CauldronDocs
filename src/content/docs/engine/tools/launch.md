@@ -3,8 +3,6 @@ title: Launch Builder
 description: 'Launch Builder Page'
 ---
 
-# Launch Builder
-
 This tool is in charge of building the launch script and creating the log file.
 
 > Most projects will not need this tool directly.

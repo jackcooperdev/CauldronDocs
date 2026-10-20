@@ -1,9 +1,9 @@
 ---
-title: Client
+title: Client Controller
+sidebar:
+  label: Client
 description: 'Client Page'
 ---
-
-# Client Controller
 
 This controller allows for a game client to be installed or launched onto the target system. It replaces the
 `launcher` controller from earlier versions.

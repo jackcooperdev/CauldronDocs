@@ -1,9 +1,9 @@
 ---
-title: Queue
+title: Queue Controller
+sidebar:
+  label: Queue
 description: 'Queue Page'
 ---
-
-# Queue Controller
 
 This controller handles the creation of download queues.
 This controller is used in every instance where a bulk number of files are required to be downloaded.
