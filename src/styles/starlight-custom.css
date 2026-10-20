@@ -4,23 +4,40 @@
  */
 
 /* ---------- Colours (dark mode) ---------- */
-/* Emerald accent and near-black greys taken from the logo */
+/* Cauldron palette */
 :root {
-    --sl-color-accent-low: hsl(153, 60%, 14%);
-    --sl-color-accent: hsl(153, 70%, 42%);
-    --sl-color-accent-high: hsl(153, 75%, 80%);
+    --cauldron-mint: #00f5d4;      /* Primary accent */
+    --cauldron-teal: #008b8b;      /* Secondary accent */
+    --cauldron-crimson: #e63946;   /* Destructive / alert */
+    --cauldron-bg: #0a0d0e;        /* Main background */
+    --cauldron-surface: #121618;   /* Cards, sidebar, header */
+    --cauldron-inset: #07090a;     /* Inputs, code */
+    --cauldron-border: #1e282a;    /* Borders and outlines */
+    --cauldron-muted: #8a9a9e;     /* Muted text */
 
-    --sl-color-white: hsl(0, 0%, 100%);
-    --sl-color-gray-1: hsl(165, 12%, 93%);
-    --sl-color-gray-2: hsl(165, 6%, 77%);
-    --sl-color-gray-3: hsl(165, 5%, 57%);
-    --sl-color-gray-4: hsl(165, 6%, 37%);
-    --sl-color-gray-5: hsl(165, 9%, 22%);
-    --sl-color-gray-6: hsl(165, 14%, 12%);
-    --sl-color-black: hsl(170, 20%, 6%);
+    --sl-color-accent-low: #00332c;
+    --sl-color-accent: var(--cauldron-mint);
+    --sl-color-accent-high: var(--cauldron-mint);
 
-    --cauldron-glow: hsla(153, 80%, 40%, 0.22);
-    --cauldron-note-bg: hsla(153, 70%, 42%, 0.08);
+    --sl-color-white: #ffffff;
+    --sl-color-gray-1: #eef2f3;
+    --sl-color-gray-2: #c9d3d5;
+    --sl-color-gray-3: var(--cauldron-muted);
+    --sl-color-gray-4: #55666a;
+    --sl-color-gray-5: var(--cauldron-border);
+    --sl-color-gray-6: var(--cauldron-surface);
+    --sl-color-black: var(--cauldron-bg);
+
+    --sl-color-hairline: var(--cauldron-border);
+    --sl-color-hairline-light: var(--cauldron-border);
+    --sl-color-bg-inline-code: var(--cauldron-inset);
+
+    --sl-color-red-low: #3a1216;
+    --sl-color-red: var(--cauldron-crimson);
+    --sl-color-red-high: #ff9aa2;
+
+    --cauldron-glow: rgba(0, 139, 139, 0.35);
+    --cauldron-note-bg: rgba(0, 245, 212, 0.06);
     --cauldron-warn-bg: hsl(38, 70%, 18%);
     --cauldron-warn-text: hsl(42, 95%, 82%);
 
@@ -29,30 +46,65 @@
 }
 
 /* ---------- Colours (light mode) ---------- */
+/* Derived from the dark palette, with a darker teal so text stays readable on white */
 :root[data-theme='light'] {
-    --sl-color-accent-low: hsl(153, 55%, 91%);
-    --sl-color-accent: hsl(153, 96%, 24%);
-    --sl-color-accent-high: hsl(155, 90%, 15%);
+    --cauldron-inset: #f2f6f6;
+    --cauldron-border: #d5dfe0;
 
-    --sl-color-white: hsl(170, 20%, 6%);
-    --sl-color-gray-1: hsl(165, 14%, 12%);
-    --sl-color-gray-2: hsl(165, 9%, 22%);
-    --sl-color-gray-3: hsl(165, 6%, 36%);
-    --sl-color-gray-4: hsl(165, 5%, 55%);
-    --sl-color-gray-5: hsl(165, 6%, 80%);
-    --sl-color-gray-6: hsl(165, 14%, 93%);
-    --sl-color-gray-7: hsl(165, 20%, 97.5%);
-    --sl-color-black: hsl(0, 0%, 100%);
+    --sl-color-accent-low: #d4fbf5;
+    --sl-color-accent: #00796b;
+    --sl-color-accent-high: #004d44;
 
-    --cauldron-glow: hsla(153, 80%, 30%, 0.16);
-    --cauldron-note-bg: hsla(153, 96%, 24%, 0.06);
+    --sl-color-white: var(--cauldron-bg);
+    --sl-color-gray-1: var(--cauldron-surface);
+    --sl-color-gray-2: #26302f;
+    --sl-color-gray-3: #55666a;
+    --sl-color-gray-4: var(--cauldron-muted);
+    --sl-color-gray-5: var(--cauldron-border);
+    --sl-color-gray-6: #eaf0f0;
+    --sl-color-gray-7: #f6f9f9;
+    --sl-color-black: #ffffff;
+
+    --sl-color-hairline: var(--cauldron-border);
+    --sl-color-hairline-light: var(--cauldron-border);
+    --sl-color-bg-inline-code: var(--cauldron-inset);
+
+    --sl-color-red-low: #fde4e6;
+    --sl-color-red: #c62834;
+    --sl-color-red-high: #8a1520;
+
+    --cauldron-glow: rgba(0, 139, 139, 0.18);
+    --cauldron-note-bg: rgba(0, 121, 107, 0.06);
     --cauldron-warn-bg: hsl(44, 100%, 90%);
     --cauldron-warn-text: hsl(30, 80%, 22%);
+}
+
+/* ---------- Search box ---------- */
+site-search button[data-open-modal] {
+    background-color: var(--cauldron-inset);
+    border-color: var(--cauldron-border);
+}
+
+/* ---------- Focus ---------- */
+:focus-visible {
+    outline-color: var(--cauldron-teal);
 }
 
 /* ---------- Readability ---------- */
 .sl-markdown-content :is(p, li) {
     max-width: 44rem;
+}
+
+/* ---------- Code blocks ---------- */
+/* Starlight sets these inside a CSS layer, so this unlayered rule takes priority */
+.expressive-code {
+    --ec-codeBg: var(--cauldron-inset);
+    --ec-frm-edBg: var(--cauldron-inset);
+    --ec-frm-edActTabBg: var(--cauldron-inset);
+    --ec-frm-edTabBarBg: var(--sl-color-gray-6);
+    --ec-frm-trmBg: var(--cauldron-inset);
+    --ec-frm-trmTtbBg: var(--sl-color-gray-6);
+    --ec-brdCol: var(--cauldron-border);
 }
 
 /* ---------- Header ---------- */
