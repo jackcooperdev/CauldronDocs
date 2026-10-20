@@ -6,7 +6,7 @@ sidebar:
 ---
 
 > This Documentation is correct for
-> version [0.2.0](https://github.com/jackcooperdev/CauldronModManager/releases/tag/0.2.0) of CauldronModManager
+> version [0.3.0](https://github.com/jackcooperdev/CauldronModManager/releases/tag/0.3.0) of CauldronModManager
 
 ## What does this do?
 

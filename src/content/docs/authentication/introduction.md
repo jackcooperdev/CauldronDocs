@@ -6,7 +6,7 @@ sidebar:
 ---
 
 > This Documentation is correct for
-> version [1.3.5](https://github.com/jackcooperdev/CauldronAuthentication/releases/tag/1.3.5) of CauldronAuthentication
+> version [1.3.6](https://github.com/jackcooperdev/CauldronAuthentication/releases/tag/1.3.6) of CauldronAuthentication
 
 ## What does this do?
 
