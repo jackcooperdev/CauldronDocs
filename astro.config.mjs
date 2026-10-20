@@ -49,17 +49,17 @@ export default defineConfig({
                         {label: 'Overview', slug: 'engine/introduction'},
                         {
                             label: 'Controllers',
-                            autogenerate: {directory: 'engine/controllers'},
+                            items: [{autogenerate: {directory: 'engine/controllers'}}],
                         },
                         {
                             label: 'Tools',
-                            autogenerate: {directory: 'engine/tools'},
+                            items: [{autogenerate: {directory: 'engine/tools'}}],
                         },
                     ],
                 },
                 {
                     label: 'Cauldron Authentication',
-                    autogenerate: {directory: 'authentication/'}
+                    items: [{autogenerate: {directory: 'authentication/'}}]
                 },
                 {
                     label: 'packwiz_js',
