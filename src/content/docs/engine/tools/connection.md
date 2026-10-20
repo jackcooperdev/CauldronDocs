@@ -11,4 +11,5 @@ This tools checks to see if the client is connected to the internet
 
 ### checkInternet()
 
-Returns true or false depending on if the client is connected to the internet.
+Returns true or false depending on if the client is connected to the internet. This is done with a DNS lookup of
+`google.com`.

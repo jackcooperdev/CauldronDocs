@@ -7,6 +7,9 @@ description: 'Launch Builder Page'
 
 This tool is in charge of building the launch script and creating the log file.
 
+> Most projects will not need this tool directly.
+> [startGame](/engine/controllers/client#startgame-version-loaderinfo-authinfo-overrides) calls it for you.
+
 > Info: For Information on Launch Arguments
 > go [here](https://minecraft.wiki/w/Minecraft_Wiki:Projects/wiki.vg_merge/Launching_the_game#Arguments)
 
@@ -14,7 +17,8 @@ This tool is in charge of building the launch script and creating the log file.
 
 ### logInjector (logFile, sessionID)
 
-This injects the sessionID and log location into the logFile to separate log files for each session.
+This injects the log location into the logging config so each session has its own log file
+(`sessionLogs/<sessionID>/mcLogs.log`). The result is written to `.temp/log_config.xml`.
 
 It takes the following parameters:
 
@@ -27,14 +31,12 @@ This functions builds the Java half of the launch command.
 
 The parameters are:
 
-+ `manifest`: The version specific Manifest (spec
-  in [getManifests](/engine/controllers/manifest#getmanifests-versionloaderloaderversion) function)
-+ `libraryList`: List of libraries for this version. (
-  See [here](/engine/controllers/library#getlibraries-librarydata-versiondata-manifestid) for information on how to get
-  that list)
-+ `versionData`: versionData in [getManifests](/engine/controllers/manifest#getmanifests-versionloaderloaderversion)
-  function
-+ `overrides`: Click [here](/engine/controllers/launcher#overrides) for information on overrides.
++ `manifest`: The version spec (found at `specPath` in the [CE Object](/engine/controllers/manifest#ce-object))
++ `libraryList`: List of library paths (`libList` in the [CE Object](/engine/controllers/manifest#ce-object))
++ `versionData`: An object containing the game version, e.g. `{ "version": "1.20.1" }`
++ `overrides`: JVM overrides. Click [here](/engine/controllers/client#overrides) for information on overrides.
+
+Returns an array of JVM arguments.
 
 ### buildGameRules (manifest, loggedUser, overrides)
 
@@ -42,40 +44,35 @@ This functions builds the Game half of the launch command.
 
 It takes the following parameters:
 
-+ `manifest`: The version specific Manifest (spec
-  in [getManifests](/engine/controllers/manifest#getmanifests-versionloaderloaderversion) function)
-+ `loggedUser`: is an object that includes all data needed to successfully authenticate a Minecraft User
++ `manifest`: The version spec (found at `specPath` in the [CE Object](/engine/controllers/manifest#ce-object))
++ `loggedUser`: Authentication data. See [Auth Info](/engine/controllers/client#auth-info) for the accepted formats.
++ `overrides`: Game overrides. Click [here](/engine/controllers/client#overrides) for information on overrides.
 
-> For Information on how to retrieve this data,
-> click [here](/authentication/introduction#startauthenticationflow-access_token) to learn more.
->
->Example of a loggedUser object
+Returns an array of game arguments.
 
-```json
-{
-  "xui": "11405000004278212345",
-  "user_id": "00000000-ef01-2345-6789-abcdef012345",
-  "access_token": "MINECRAFT_ACCESS_TOKEN",
-  "profile": {
-    "uuid": "069a79f444e94726a5befca90e38aaf5",
-    "username": "Notch"
-  }
-}
-```
+### buildFile (manifest, jreVersion, jvmRules, gameRules)
 
-+ `overrides`: Click [here](/engine/controllers/launcher#overrides) for information on overrides.
-
-### buildFile (manifest, jreVersion, jvmRules, gamesRules)
-
-This function builds the complete launch file and writes it to a file ready for launch.
+This function builds the complete launch command and writes it to a file ready for launch.
 
 It takes the following parameters:
 
-+ `manifest`: The version specific Manifest (spec
-  in [getManifests](/engine/controllers/manifest#getmanifests-versionloaderloaderversion) function)
-+ `jreVersion`: jvmComp in [getManifests](/engine/controllers/manifest#getmanifests-versionloaderloaderversion) function
++ `manifest`: The version spec
++ `jreVersion`: `jreVersion` in the [CE Object](/engine/controllers/manifest#ce-object)
 + `jvmRules`: The data created from the [buildJVMRules](#buildjvmrules-manifest-librarylist-versiondata-overrides)
   function
 + `gameRules`: The data created from the [buildGameRules](#buildgamerules-manifest-loggeduser-overrides) function
 
-It will build the launch file and create a file in the scripts' folder. This will be ready to launch.
+The script is written to `.temp/launch.sh` (Linux / macOS) or `.temp/launch.bat` (Windows) and its path is returned.
+
+### buildLaunchScript (manifest, jreVersion, sessionName)
+
+This function builds a launch script for a dedicated server.
+
+It takes the following parameters:
+
++ `manifest`: The server version spec
++ `jreVersion`: JVM Version Name
++ `sessionName`: Folder name of the server in `servers/`
+
+The server is started with 4GB of RAM and [Aikar's Flags](https://mcflags.emc.gs). The script is written to
+`scripts/launch-server.sh` (Linux / macOS) or `scripts/launch-server.bat` (Windows) and its path is returned.

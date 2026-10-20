@@ -15,11 +15,13 @@ This controller is used in every instance where a bulk number of files are requi
 This function takes the following parameters:
 
 + `queue`: Array with objects in the [following format](#queue-format).
-+ `isAssetDownload`: Whether the queue contains assets. This changes how many concurrent downloads occur.
++ `isAssetDownload`: Whether the queue contains assets.
 
-This function will loop until all files have been downloaded or an item fails a set number of times.
+Each item is checked against its SHA1 checksum and downloaded if it is missing or invalid.
+On Linux and macOS, `.jar` files and items marked `isExecutable` are made executable.
 
-The function will return an array of failed items in the [same](#queue-format) format.
+The function will return an empty array once every item has been verified. If an item cannot be downloaded, the
+function will reject with `File Not Found: <origin>`.
 
 ## Appendix
 
@@ -30,6 +32,10 @@ The function will return an array of failed items in the [same](#queue-format) f
   "origin": "URL of Item",
   "destination": "Path of item (excluding file name)",
   "fileName": "The file name",
-  "sha1": "SHA1 Checksum (Input NONE to skip verification)"
+  "sha1": "SHA1 Checksum (Input NONE to skip verification)",
+  "isExecutable": "(Optional) Make the file executable after download",
+  "isNative": "(Optional) Whether the item is a native library"
 }
 ```
+
+> `origin` may contain `${resourcePath}`, which is replaced with the `RESOURCE_SERVER` address when downloading.
