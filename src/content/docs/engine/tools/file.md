@@ -20,7 +20,11 @@ It takes the following parameters:
 It will return `true` / `false` dependent on whether the file downloads successfully. Downloads are retried up to 50
 times.
 
-> If the client is offline, the download is skipped and `true` is returned.
+If the client is offline, the function rejects with:
+
+```
+Version Installation is corrupted! Please Reinstall with a stable internet connection. Issue With: <url>
+```
 
 ### validate (fileObject)
 

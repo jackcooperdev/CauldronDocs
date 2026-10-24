@@ -23,6 +23,9 @@ On Linux and macOS, `.jar` files and items marked `isExecutable` are made execut
 The function will return an empty array once every item has been verified. If an item cannot be downloaded, the
 function will reject with `File Not Found: <origin>`.
 
+If the client is offline and a file is missing or invalid, the function rejects with the
+[corrupted installation error](/engine/tools/file#download-url-location-filename).
+
 ## Appendix
 
 ### Queue Format

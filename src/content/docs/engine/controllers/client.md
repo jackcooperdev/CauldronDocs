@@ -14,18 +14,26 @@ This controller allows for a game client to be installed or launched onto the ta
 
 Parameters:
 
-+ `version`: Game Version (e.g. `1.20.1`)
++ `version`: Game Version (e.g. `1.20.1`). Use `release` / `latest` or `snapshot` for the latest version
 + `loaderInfo`: An object describing the loader. See [here](#loader-info). (Defaults to `{ type: 'vanilla' }`)
 
 This function gathers everything required for the selected version
 (using [getCEObject](/engine/controllers/manifest#getceobject-installobject)) and then verifies / downloads the client
-jar, JVM, assets, libraries and logging config through the [queue](/engine/controllers/queue).
+jar, assets, libraries and logging config through the [queue](/engine/controllers/queue).
+
+The JVM is only verified and downloaded if its folder (`jvm/<jreVersion>`) does not exist yet.
+
+Any loader post processors (e.g. Forge / NeoForge) are run once the files are installed, and the libraries they create
+are added to `libList`.
 
 If the loader is not supported, an error is logged and the install falls back to `vanilla`.
 
 Any [patches](#patches) that match the version and operating system are applied before installing.
 
 The function will return the [CE Object](/engine/controllers/manifest#ce-object) for the installation.
+
+> Versions that have been installed before can be installed and launched offline. See
+> [Offline Use](/engine/introduction#offline-use).
 
 ### startGame (version, loaderInfo, authInfo, overrides)
 
@@ -38,12 +46,11 @@ Parameters:
 
 This function will:
 
-1. Install the game using [installGame](#installgame-version-loaderinfo)
+1. Install the game using [installGame](#installgame-version-loaderinfo), including any loader post processors
 2. Create a session ID and inject it into the logging config
 3. Extract natives into `.temp` in the Cauldron folder
-4. Run any loader post processors (e.g. Forge / NeoForge)
-5. Build the launch script (see [Launch Builder](/engine/tools/launch))
-6. Spawn the game as a detached process
+4. Build the launch script (see [Launch Builder](/engine/tools/launch))
+5. Spawn the game as a detached process
 
 The function finishes when the boot process starts. It will return the session ID.
 
@@ -93,7 +100,8 @@ const ceObject = await installGame('1.21.1', { type: 'neoforge' });
 ```
 
 + `type`: One of `vanilla`, `forge`, `fabric` or `neoforge`
-+ `version`: (Non-Vanilla Only) Exact loader version to use. Defaults to `release` (the recommended loader version)
++ `version`: (Non-Vanilla Only) Exact loader version to use. Use `release`, or leave out, for the recommended loader
+  version
 
 ### Auth Info
 
