@@ -17,7 +17,8 @@ cauldroncli start [options]
 
 Options:
 
-+ `-v <version>` `--mc_version <version>`: Minecraft Version (Required unless launching a saved modpack)
++ `-v <version>` `--mc_version <version>`: Minecraft Version, or `release` / `snapshot` for the latest (Required
+  unless launching a saved modpack)
 + `-l <loader>` `--mc_loader <loader>`: Loader: `vanilla`, `forge`, `fabric` or `neoforge` (Default: `vanilla`)
 + `-x <version>` `--mc_loader_version <version>`: Loader Version (Default: recommended version)
 + `-n <name>` `--name <name>`: Instance Name. Also used as the modpack name
@@ -26,12 +27,14 @@ Options:
 + `--curseforge_mods <mods>`: CSV of CurseForge mod slugs to install
 + `--modrinth_mods <mods>`: CSV of Modrinth mod slugs to install
 + `-c` `--cache`: Use the existing modpack called `<name>` instead of rebuilding it from the mod flags
-+ `-i` `--dry`: Install but don't launch (Default: false)
++ `-i` `--dry`: Install the game without launching it (Default: false)
 + `-g` `--headless`: Skip interactive elements
 + `-d` `--debug`: Output extra debugging information
 
 The game is installed (if needed) and launched. Once the game starts, its log is shown in the terminal until the game
 closes (unless `--dry` or `--headless` is used).
+
+Versions that have been installed before can be launched [offline](/cli/introduction#offline-use).
 
 Each instance runs in its own folder at `sessions/<name>` in the Cauldron folder. If `--name` is not given, the name
 `quick-<loader>-<version>` is used.

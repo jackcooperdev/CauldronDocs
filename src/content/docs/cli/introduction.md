@@ -3,7 +3,7 @@ title: Cauldron CLI
 description: 'Index page for Cauldron CLI'
 ---
 
-> This Documentation is correct for version [0.5.5](https://github.com/jackcooperdev/CauldronCLI/releases/tag/v0.5.5)
+> This Documentation is correct for version [0.7.0](https://github.com/jackcooperdev/CauldronCLI/releases/tag/v0.7.0)
 > of CauldronCLI
 
 ## What does this do?
@@ -62,6 +62,7 @@ cauldroncli start -v 1.20.1 -l forge -m <minecraft_access_token>
 | [`importMPack`](/cli/commands/modpacks#importmpack)        | Import a CurseForge / Modrinth pack |
 | [`getMPack`](/cli/commands/modpacks#getmpack)              | List the mods in a modpack          |
 | [`modifyMPack`](/cli/commands/modpacks#modifympack)        | Add or remove mods                  |
+| [`list`](/cli/commands/installation#list)                  | List installed versions             |
 | [`reset`](/cli/commands/installation#reset)                | Reset the Cauldron folder           |
 | [`uninstall`](/cli/commands/installation#uninstall)        | Remove the Cauldron folder          |
 
@@ -74,6 +75,8 @@ Most commands accept the following options.
 + `-g` `--headless`: Skip interactive elements and output JSON. See [Headless Mode](#headless-mode)
 + `-d` `--debug`: Output extra debugging information
 
+> The `list` and `uninstall` commands use `-n` for `--headless`.
+
 ## Headless Mode
 
 When `--headless` is passed, the CLI writes one JSON object per line to stdout so other applications can read the
@@ -85,6 +88,21 @@ output.
 | `data`     | Data returned by the command   | `{"type":"data","payload":{...}}`                         |
 | `complete` | The command finished           | `{"type":"complete","success":true,"payload":{...}}`      |
 | `error`    | The command failed             | `{"type":"error","message":"..."}`                        |
+
+## Offline Use
+
+Versions that have been installed while online can be launched without an internet connection:
+
+```bash
+# Install while online
+cauldroncli start -v 1.21.1 --dry
+
+# Launch later, online or offline
+cauldroncli start -v 1.21.1
+```
+
+Use [`list`](/cli/commands/installation#list) to see which versions are installed. See
+[Offline Use](/engine/introduction#offline-use) in the engine docs for more information.
 
 ## Configuration
 
