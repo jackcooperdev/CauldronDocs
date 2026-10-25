@@ -70,7 +70,8 @@ This function resolves version aliases.
 Without a `loaderManifest`, the resolved version is returned as a string.
 
 With a `loaderManifest`, an object is returned. If `lv` is `release`, the recommended loader version for that
-Minecraft version is looked up. If the version is not supported by the loader, `false` is returned.
+Minecraft version is looked up, and `false` is returned if the version is not supported by the loader. Any other `lv`
+is returned unchanged.
 
 ```json
 { "v": "1.20.1", "lv": "47.4.0" }
