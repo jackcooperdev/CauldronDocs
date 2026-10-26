@@ -34,6 +34,9 @@ Options:
 The game is installed (if needed) and launched. Once the game starts, its log is shown in the terminal until the game
 closes (unless `--dry` or `--headless` is used).
 
+While the game is installed, [progress bars](/engine/controllers/queue#progress-bars) show how many files have been
+checked and downloaded. They are not shown with `--headless`.
+
 Versions that have been installed before can be launched [offline](/cli/introduction#offline-use).
 
 Each instance runs in its own folder at `sessions/<name>` in the Cauldron folder. If `--name` is not given, the name
