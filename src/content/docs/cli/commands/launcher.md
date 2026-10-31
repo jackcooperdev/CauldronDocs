@@ -32,7 +32,8 @@ Options:
 + `-d` `--debug`: Output extra debugging information
 
 The game is installed (if needed) and launched. Once the game starts, its log is shown in the terminal until the game
-closes (unless `--dry` or `--headless` is used).
+closes (unless `--dry` or `--headless` is used). This includes versions without a log4j config (1.5.2 and older),
+which use the engine's [legacy logging](/engine/controllers/client#legacy-logging).
 
 While the game is installed, [progress bars](/engine/controllers/queue#progress-bars) show how many files have been
 checked and downloaded. They are not shown with `--headless`.
