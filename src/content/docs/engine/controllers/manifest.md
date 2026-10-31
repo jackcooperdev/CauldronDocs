@@ -93,7 +93,7 @@ Reads and verifies a `version.ce` file. Returns the [CE Object](#ce-object), or 
 {
   "libList": "Array of library paths to add to the classpath (Array)",
   "nativeList": "Array of native jar paths to extract (Array)",
-  "loggingInfo": "Logging config file information (Object)",
+  "loggingInfo": "Logging config file information (Object). Not included if the version has no logging config",
   "installQueue": "Client jar, assets, libraries and logging config in queue format (Array)",
   "javaQueue": "JVM files in queue format (Array)",
   "jreVersion": "JVM Version Name (String)",
@@ -102,6 +102,8 @@ Reads and verifies a `version.ce` file. Returns the [CE Object](#ce-object), or 
   "loader": "Current Loader (String)",
   "lv": "Loader Version (String)",
   "specName": "Version ID (String)",
+  "type": "Version type from the spec, e.g. release, snapshot or old_beta (String)",
+  "patches": "Libraries in the spec marked as patches (Array)",
   "post": "Post processing data, or false if not required"
 }
 ```

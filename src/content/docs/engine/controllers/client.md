@@ -28,8 +28,6 @@ are added to `libList`.
 
 If the loader is not supported, an error is logged and the install falls back to `vanilla`.
 
-Any [patches](#patches) that match the version and operating system are applied before installing.
-
 The function will return the [CE Object](/engine/controllers/manifest#ce-object) for the installation.
 
 > Versions that have been installed before can be installed and launched offline. See
@@ -47,14 +45,13 @@ Parameters:
 This function will:
 
 1. Install the game using [installGame](#installgame-version-loaderinfo), including any loader post processors
-2. Create a session ID and inject it into the logging config
+2. Create a session ID and inject it into the logging config (or set up [legacy logging](#legacy-logging) if the
+   version has no logging config)
 3. Extract natives into `.temp` in the Cauldron folder
 4. Build the launch script (see [Launch Builder](/engine/tools/launch))
 5. Spawn the game as a detached process
 
 The function finishes when the boot process starts. It will return the session ID.
-
-> If the version has no logging config, the session ID will be `DETACH`.
 
 The `.temp` folder is removed automatically once the game closes.
 
@@ -183,10 +180,17 @@ Launches with a placeholder `Demo` user.
 > For A full list of arguments
 > click [here](https://minecraft.wiki/w/Minecraft_Wiki:Projects/wiki.vg_merge/Launching_the_game#Arguments)
 
-### Patches
+### Legacy Logging
 
-Some versions are swapped to a different loader on certain systems so that they can run.
+Versions without a log4j logging config (1.5.2 and older) cannot send their logs to Cauldron themselves. For these
+versions `startGame` instead:
 
-| Patch           | Versions                 | Operating System    | Change                     |
-|-----------------|--------------------------|---------------------|----------------------------|
-| `ornithe_patch` | b1.7 to 1.2.5            | `mac-os-arm64`      | Loader is set to `ornithe` |
+1. Redirects the game's output to `sessionLogs/<sessionID>/raw.log`
+2. Reads new lines from that file while the game runs, formats them like log4j output
+   (`[HH:MM:SS] [main/LEVEL]: message`) and writes them to `sessionLogs/<sessionID>/mcLogs.log`
+3. Sends the formatted lines to `127.0.0.1` on ports `9500` and `9501`, the same as the log4j config does for newer
+   versions
+
+This means [startMCListening](/engine/tools/logger#startmclistening-) works the same way for every version. The log
+level (`INFO`, `WARN` or `ERROR`) is guessed from each message, and stack traces are logged as `ERROR`. Logging stops
+when the game closes.

@@ -62,6 +62,21 @@ It takes the following parameters:
 
 The script is written to `.temp/launch.sh` (Linux / macOS) or `.temp/launch.bat` (Windows) and its path is returned.
 
+On macOS each argument is written on its own line (`-cp <path>` and `--flag <value>` pairs are kept together) and
+arguments containing spaces or special characters are quoted. Linux uses `java` and Windows uses `javaw`.
+
+### Launch Variables
+
+As well as the variables in the version spec, the following are filled in when building the arguments:
+
+| Variable                | Used In | Value                                 |
+|-------------------------|---------|---------------------------------------|
+| `${natives_directory}`  | JVM     | `.temp` in the Cauldron folder        |
+| `${assets_root}`        | JVM     | `assets` in the Cauldron folder       |
+| `${profile_name}`       | Game    | `Minecraft`                           |
+| `${resolution_width}`   | Game    | `854`                                 |
+| `${resolution_height}`  | Game    | `480`                                 |
+
 ### buildLaunchScript (manifest, jreVersion, sessionName)
 
 This function builds a launch script for a dedicated server.

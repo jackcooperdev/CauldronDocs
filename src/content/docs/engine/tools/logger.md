@@ -22,8 +22,9 @@ cauldronLogger.info('Hello from Cauldron');
 
 ### startMCListening ()
 
-Starts a TCP server on `127.0.0.1:9500` that receives log output from Minecraft (sent by the injected logging config)
-and prints it with the matching log level.
+Starts a TCP server on `127.0.0.1:9500` that receives log output from Minecraft (sent by the injected logging config,
+or by [legacy logging](/engine/controllers/client#legacy-logging) for versions without one) and prints it with the
+matching log level.
 
 The function resolves `true` when the game disconnects and rejects if the server cannot start (for example, if the port
 is already in use).
